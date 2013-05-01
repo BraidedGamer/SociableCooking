@@ -1,4 +1,3 @@
 SociableCooking
 ===============
-
-This is a repo for my java application designed and developed to work in conjunction with my sociablecooking website.
+SociableCooking is a web application that allows all registered users to post and comment on recipes.
