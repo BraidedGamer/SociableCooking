@@ -1,0 +1,217 @@
+/* 	Designed and Coded by Theodore Philip Rees to advance my current 
+	skills in web design and showcase my knowledge of web programming! 
+
+*/
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+#loginbtn {
+	width: 50px;
+	height: 25px;
+	
+	background: #ddd;
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#cdc5bf), to(#aaa));
+	background: -moz-linear-gradient(top, #cdc5bf, #aaa);
+	background: linear-gradient(left top, #cdc5bf, #aaa);
+	filter	  : progid:DXImageTransform.Microsoft.Gradient.(
+				startColorstr='#cdc5bf', endColorstr='#a0a0a0');
+	
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#loginbtn:hover {
+	width: 50px;
+	height: 25px;
+	
+	background: #ccc;
+	background: linear-gradient(left top, #aaa, #cdc5bf);
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#aaa), to(#cdc5bf));
+	background: -moz-linear-gradient(top, #aaa, #cdc5bf);
+	filter	  : progid:DXImageTransform.Microsoft.Gradient.(
+				startColorstr='#a0a0a0', endColorstr='#cdc5bf');
+
+	
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#userid, #password {
+	width: 100px;
+	height: 20px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #f2f1f0;
+	
+	border: none;
+	border-bottom: 1px dashed #BE2625;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#userid2, #password2 {
+	width: 200px;
+	height: 30px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #f2f1f0;
+	
+	border: none;
+	border-bottom: 1px dashed #BE2625;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+#searchF {
+	width: 450px;
+	height: 25px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #f2f1f0;
+	
+	border: none;
+	border-bottom: 1px dashed #BE2625;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 14px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+#fullName, #email, #useridREG, #passwordREG, #confirmPASS {
+	width: 200px;
+	height: 30px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #f2f1f0;
+	
+	border: none;
+	border-bottom: 1px dashed #BE2625;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 16px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#title {
+	width: 500px;
+	height: 25px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #f2f1f0;
+
+	border: none;
+	border-bottom: 1px dashed #BE2625;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+
+#signUPbtn, #updatebtn, #archivebtn {
+	width: 100px;
+	height: 25px;
+	
+	background: #ddd;
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#cdc5bf), to(#aaa));
+	background: -moz-linear-gradient(top, #cdc5bf, #aaa);
+	background: linear-gradient(left top, #cdc5bf, #aaa);
+	filter	  : progid:DXImageTransform.Microsoft.Gradient.(
+				startColorstr='#cdc5bf', endColorstr='#a0a0a0');
+	
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+#signUPbtn:hover, #updatebtn:hover, #archivebtn:hover {
+	width: 100px;
+	height: 25px;
+	
+	background: #ccc;
+	background: linear-gradient(left top, #aaa, #cdc5bf);
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#aaa), to(#cdc5bf));
+	background: -moz-linear-gradient(top, #aaa, #cdc5bf);
+	filter	  : progid:DXImageTransform.Microsoft.Gradient.(
+				startColorstr='#a0a0a0', endColorstr='#cdc5bf');
+
+	
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#shortdesc, #comment {
+	width: 500px;
+	height: 100px;
+	
+	padding: 0px 0px 0px 10px;
+	
+	background: #ffffff;
+
+        border: 1px solid #2c2c2c;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;	
+
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}
+
+#ingredients, #directions {
+	width: 500px;
+	height: 160px;
+	
+	padding: 0px 0px 0px 10px;
+
+	background: #ffffff;	
+
+	border: 1px solid #2c2c2c;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #BE2625;
+}

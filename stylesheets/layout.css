@@ -1,0 +1,161 @@
+/* 	Designed and Coded by Theodore Philip Rees to advance my current 
+	skills in web design and showcase my knowledge of web programming! 
+*/
+
+#wrapper {
+	width: 1000px;
+	
+	margin: 0px auto;
+	
+	padding: 30px 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+}
+
+#headerBar {
+	width: 1000px;
+	height: 40px;
+	
+	margin: auto;
+	
+	padding-left: 5px;
+	padding-right: 5px;
+	
+	background: #f04040;
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#F44), to (#922));
+	background: -moz-linear-gradient(top, #F44, #922);
+	background: linear-gradient(left top, #F44, #922);
+	filter 	  : progid: DXImageTransform.Microsoft.Gradient(
+				startColorstr='#F04040', endColorstr='#902020');
+	
+	border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+}
+
+#login	{
+	float: right;
+	width: 283px;
+	height: 11px;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f2f1f0;
+}
+
+#nav {
+	float:right;
+	width: 300px;
+	height: 11px;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f2f1f0;
+}
+
+#nav a {
+	height:30px;
+	
+	display: block;
+	padding: 4px;
+	padding-top: 0px;
+	
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #f2f1f0;
+	background: none;
+}
+
+#nav a:hover {
+	height: 30px;
+	
+	background: #c22;
+	background: linear-gradient(left top, #922, #f44);
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#922) to(#f44));
+	background: -moz-linear-gradient(top, #922, #f44);
+	filter    : progrid:DXImageTransform.Microsoft.Gradient(
+				startColorstr='#902020', endColorstr='#f04040');
+	
+	display: block;
+	padding: 4px;
+	padding-top: 0px;
+	
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+
+	
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #f2f1f0;
+}
+
+#search {
+	position: relative;
+	top: 0px;
+	left: 435px;
+	
+	width: 283px;
+	height: 22px;
+	
+	padding-top: 5px;
+	
+	margin: 0px;
+}
+
+#sideBar {
+	float: right;
+	width: 290.00px;
+	height: 720px;
+
+	font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	margin-left: 5px;
+
+	background-color: #f2f1f0;
+
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+#dashboard {
+	float: left;
+	width: 665.00px;
+	height: 720px;
+	
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+
+	padding-top: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-bottom: 5px;
+	
+	margin-left: 5px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	background: #f2f1f0;
+
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	
+	overflow: auto;
+}
