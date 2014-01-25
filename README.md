@@ -10,4 +10,7 @@ the hard copy book recipes straight.
 
 **I intend to work on evolving this site beyond what it is now by implementing ajax for a more dynamic experience
 
-**I'll eventually be going through all the code and commenting it for easier understanding of the code
+**I'll eventually be going through and commenting out all the code for easier understanding of the code
+
+**I'll be keeping a close eye on the sociable.net domain and if it ever becomes available I'll switch sociablecooking
+to sociable.net and make it a fully-fledged social network.
