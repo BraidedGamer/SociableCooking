@@ -1,7 +1,0 @@
-#Files to Ignore#
-#################
-myLibrary/functions.php
-#File Types to Ignore#
-######################
-.*~
-*.md~
