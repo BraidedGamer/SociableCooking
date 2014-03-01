@@ -30,7 +30,7 @@ echo "<tr><td colspan=\"2\" align=\"right\"><input type=\"submit\" name=\"login\
 echo "<tr><td colspan=\"2\"><input type=\"hidden\" value=\"validate\" name=\"card\"></td></tr>\n";
 
 echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
-echo "<tr><td colspan=\"2\">Forgotten Password?</td></tr>\n";
+echo "<tr><td colspan=\"2\"><a href=\"index.php?card=forgotten\">Forgotten Password?</a></td></tr>\n";
 
 echo "</table></form>\n";
 } else
