@@ -6,10 +6,10 @@ echo "Currently we're still in beta and new features are being thought of \n";
 echo "and applied as we tweak them into the project.</p>\n";
 
 // This section of the about page is to tell a little about me as the developer
-echo "<h1>About The Developer</h1>\n";
-echo "<p>Hello, I'm the developer of SociableCooking. I still have no idea \n";
-echo "how far I'm going to take this project, but I eventually hope to \n";
-echo "surpass allrecipes.com. After which I hope to start makeing ad \n";
+echo "<h1>About The Developer and Founder</h1>\n";
+echo "<p>Hello, I'm the developer and founder of SociableCooking. I still \n";
+echo "have no idea how far I'm going to take this project, but I eventually \n";
+echo "hope to surpass allrecipes.com. After which I hope to start makeing ad \n";
 echo "revenue to supplement my income and have a steady flow of cash.</p>\n";
 
 // Social Networking links and how to get involved with the development
@@ -24,5 +24,11 @@ echo "<a href=\"http://www.github.com/Teds-Unique-Area-Graphics\" target=\"_blan
 echo "GitHub Orginization</a>\n";
 echo "<a href=\"http://www.github.com/Teds-Unique-Area-Graphics/SociableCooking\" target=\"_blank\">\n";
 echo "GitHub Project Page</a>\n";
+
+echo "<h1>About the Development Team</h1>\n";
+echo "<p>The development team is posted on the github orginization page. To \n";
+echo "become a member of the dev team please feel free to message me and I'll \n";
+echo "review your skills. If your a match for our team, we'll welcome you to \n";
+echo "the team.</p>\n";
 
 ?>

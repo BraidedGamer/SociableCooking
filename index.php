@@ -38,6 +38,8 @@ else
 </div>
 <div id="sideBar">
 <?php
+// Display of social network badges
+
 if(!isset($_SESSION['recipeuser']))
 {
 	include_once("register.inc.php");
