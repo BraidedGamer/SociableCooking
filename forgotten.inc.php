@@ -19,7 +19,7 @@ echo "<input type=\"text\" name=\"email-retrieval\" id=\"emailRetrieval\">\n";
 echo "</td></tr>\n";
 echo "<tr><td colspan=\"2\" align=\"right\">\n";
 echo "<input type=\"submit\" name=\"forgotten\" id=\"emailRetrievalbtn\" value=\"Forgotten Password\"></td></tr>\n";
-echo "<tr><td><input type=\"hidden\" value=\"reset-password\" name=\"card\"></td></tr>\n";
+echo "<tr><td><input type=\"hidden\" value=\"reset-request\" name=\"card\"></td></tr>\n";
 echo "</table></form>\n";
 
 ?>
