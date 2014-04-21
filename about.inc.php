@@ -20,10 +20,6 @@ echo "are true then check out the links below.</p>\n";
 
 echo "<a href=\"http://www.twitter.com/NationalCoder\" target=\"_blank\">Twitter</a>\n";
 echo "<a href=\"http://www.github.com/MasterProgram\" target=\"_blank\">GitHub Profile</a>\n";
-echo "<a href=\"http://www.github.com/Teds-Unique-Area-Graphics\" target=\"_blank\">\n";
-echo "GitHub Orginization</a>\n";
-echo "<a href=\"http://www.github.com/Teds-Unique-Area-Graphics/SociableCooking\" target=\"_blank\">\n";
-echo "GitHub Project Page</a>\n";
 
 echo "<h1>About the Development Team</h1>\n";
 echo "<p>The development team is posted on the github orginization page. To \n";
