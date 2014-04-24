@@ -19,7 +19,7 @@ echo "again maybe you just want to follow me on twitter. If any of these \n";
 echo "are true then check out the links below.</p>\n";
 
 echo "<a href=\"http://www.twitter.com/NationalCoder\" target=\"_blank\">Twitter</a>\n";
-echo "<a href=\"http://www.github.com/MasterProgram\" target=\"_blank\">GitHub Profile</a>\n";
+echo "<a href=\"http://www.github.com/NationalCoder\" target=\"_blank\">GitHub Profile</a>\n";
 
 echo "<h1>About the Development Team</h1>\n";
 echo "<p>The development team is posted on the github orginization page. To \n";
