@@ -15,3 +15,13 @@ the hard copy book recipes straight.
 * [ ] Enhaced Encryption for password with a salted hash
 
 * [ ] Forgotten Password Reset
+
+* [ ] I'll add a little javascipt/json/jquery or whatever I feel will work with my plans for the website
+
+* [ ] I'll add a function to grab your current ip address and look-up your current location when commenting,
+posting, or editing recipes.
+
+* [ ] I'll add a status function and and a more advanced profile page.
+
+*After all that I'll have earned a good break. Question is will I want to take a break? I will however be*
+*uploading the application to the slideme marketplace and possible even up onto the google play store.*
