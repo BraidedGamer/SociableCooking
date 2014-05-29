@@ -1,6 +1,6 @@
-#[SociableCooking](http://www.sociablecooking.com/)
+#SociableCooking
 
-SociableCooking is a web application that allows all registered users to post and comment on recipes.
+[SociableCooking](http://www.sociablecooking.com/) is a web application that allows all registered users to post and comment on recipes.
 
 SociableCooking is a way to open your kitchen to creative and innovative new cooking methods and recipes. After
 registering with the site feel to post recipes with weird and akward directions. I'll try and go through and weed out
