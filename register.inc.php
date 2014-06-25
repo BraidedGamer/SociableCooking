@@ -44,9 +44,7 @@ echo "<tr><td colspan=\"2\"><p><font size=\"1\"><b>TERMS OF USE:</b> By logging 
 
 echo "<tr><td colspan=\"2\" align=\"right\"><font size=\"1\" color=\"#cc9966\">&copy; " . 
 	date("Y") . " Ted's Unique Area Graphics <br> All Rights Reserved</font></td></tr>\n";
-/* These lines will be uncommented after I complete a few more things. As well I want to create two different ids for the ahref
- * links one with a gradient background and one without.
-*/
+
 echo "<tr><td colspan=\"2\" align=\"right\"><font size=\"1\" color=\"#cc9966\"><a href=\"index.php?card=contact\">Contact</a>\n";
 echo " <a href=\"index.php?card=about\">About</a></td></tr>\n";
 
