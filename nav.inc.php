@@ -31,10 +31,14 @@ echo "<div id=\"nav\">\n";
 		{
 			echo "<tr><td><a href=\"index.php?card=myrecipes\"><strong>My Recipes</strong></a></td>\n";
 		}
+		/* Show Post if your viewing the catalogs, yours or the communities, if
+		   your viewing a single recipe make it vanish and if your viewing a recipe
+		   other than your own display a spice-up link.
+		*/
+		echo "<td><a href=\"index.php?card=newrecipe\"><strong>POST</strong></a></td>\n";
+	} else if($cardset = 'showrecipe') {
+		echo "<td><a href=\"index.php?card=spiceUP\"><strong>SPICE</strong></a></td>\n";
 	}
-	
-	echo "<td><a href=\"index.php?card=newrecipe\"><strong>POST</strong></a></td>\n";
-	
 	$recipeid = $_REQUEST['id'];
 	// show comment, print and edit nav buttons only when card is set to a value of 'showrecipe'
 	if($cardset == 'showrecipe')
