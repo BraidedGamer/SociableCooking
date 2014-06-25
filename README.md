@@ -25,5 +25,4 @@ posting, or editing recipes.
 
 * [ ] Spiced-UP Functionality
 
-*After all that I'll have earned a good break. Question is will I want to take a break? I will however be*
-*uploading the application to the slideme marketplace and possible even up onto the google play store.*
+*After all that I'll have earned a good break. Question is will I want to take a break?*
