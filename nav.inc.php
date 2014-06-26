@@ -37,7 +37,16 @@ echo "<div id=\"nav\">\n";
 		*/
 		echo "<td><a href=\"index.php?card=newrecipe\"><strong>POST</strong></a></td>\n";
 	} else if($cardset = 'showrecipe') {
-		echo "<td><a href=\"index.php?card=spiceUP\"><strong>SPICE</strong></a></td>\n";
+		$recipeid = $_REQUEST['id'];
+		$query = "SELECT poster FROM recipes WHERE recipeid = $recipeid";
+		$result = mysql_query($query);
+		$row = mysql_fetch_array($result, MYSQL_ASSOC);
+		$poster = $row['poster'];
+		if($poster != $userid) {
+			echo "<td><a href=\"index.php?card=spiceUP\"><strong>SPICE</strong></a></td>\n";
+		}  else {
+			echo "";
+		}
 	}
 	$recipeid = $_REQUEST['id'];
 	// show comment, print and edit nav buttons only when card is set to a value of 'showrecipe'
