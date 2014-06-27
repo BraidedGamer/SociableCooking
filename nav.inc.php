@@ -18,7 +18,7 @@ echo "<div id=\"nav\">\n";
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
 	$fullname = $row['fullname'];
 	
-	echo "<table width=\"80%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"right\">\n";
+	echo "<table width=\"90%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"right\">\n";
 
 	$cardset = $_REQUEST['card'];
 	if($cardset != 'showrecipe')
