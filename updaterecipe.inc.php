@@ -11,7 +11,7 @@
 	$ingredients = $row['ingredients'];
 	$directions = $row['directions'];
 	
-if (!isset($_SESSION['valid_recipe_user']) && $poster == $_SESSION['valid_recipe_user'])
+if (!isset($_SESSION['recipeuser']) && $poster == $_SESSION['recipeuser'])
 {
 	echo "<h1>Sorry, your not logged in</h1>\n";
 	echo "<p>Sorry, you do not have permission to post recipes. For you to post a recipe you must first register. If you are new here please use the following link to get to the registeration page. There are no subscription fees associated with this site.\n";
