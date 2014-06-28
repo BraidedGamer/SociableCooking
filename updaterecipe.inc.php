@@ -16,7 +16,7 @@ if (!isset($_SESSION['valid_recipe_user']) && $poster == $_SESSION['valid_recipe
 	echo "<h1>Sorry, your not logged in</h1>\n";
 	echo "<p>Sorry, you do not have permission to post recipes. For you to post a recipe you must first register. If you are new here please use the following link to get to the registeration page. There are no subscription fees associated with this site.\n";
 	echo "<a href=\"index.php?card=register\">Registration This Way</a></p>\n";
-	echo "<p>If you are a returning users please use the following link to login.</p>\n";
+	echo "<p>If you are a returning user please use the following link to login.</p>\n";
 	echo "<a href=\"index.php?card=login\">Please login to post recipes</a>\n";
 } else
 {

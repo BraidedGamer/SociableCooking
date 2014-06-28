@@ -43,7 +43,7 @@ echo "<div id=\"nav\">\n";
 		$row = mysql_fetch_array($result, MYSQL_ASSOC);
 		$poster = $row['poster'];
 		if($poster != $userid) {
-			echo "<td><a href=\"index.php?card=spiceUP\"><strong>SPICE</strong></a></td>\n";
+			echo "<td><a href=\"index.php?card=spiceUP&id=$recipeid\"><strong>SPICE</strong></a></td>\n";
 		}  else {
 			echo "";
 		}
