@@ -28,7 +28,7 @@ if(!isset($_SESSION['recipeuser']) && $poster == $_SESSION['recipeuser']) {
 	echo "<tr><td align=\"left\" colspan=\"2\"><recipeTIT>$title</recipeTIT></td></tr>\n";
 	echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\" color\"#ff9966\">Created By <em>Chef $poster</em> Spiced By <em>Chef $userid</em></font></td></tr>\n";
 
-	echo "<tr><td<h3>Image</h3></td><td><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td></tr>\n";
+	echo "<tr><td><h3>Current Image</h3></td><td><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td></tr>\n";
 	echo "<tr><td><h3>Update Image</h3></td><td><input type=\"file\" name=\"image\"></td></tr>\n";
 	echo "<tr><td colspan=\"2\"><em>Please ensure that your image is no larger than 80px x 60px. As well ensure that all images are jpeg filetypes.</td></tr>\n";
 
