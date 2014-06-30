@@ -25,7 +25,7 @@ if(!isset($_SESSION['recipeuser']) && $poster == $_SESSION['recipeuser']) {
 	echo "<form enctype=\"multipart/form-data\" action=\"index.php\" method=\"post\">\n";
 	echo "<table width=\"80%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">";
 	echo "<tr><td align=\"center\" colspan=\"2\"><h1>Time to Spice Things Up!</h1></td></tr>\n";
-	echo "<tr><td align=\"left\" colspan=\"2\"><recipeTIT>$title</recipeTIT></td></tr>\n";
+echo "<tr><td align=\"left\" colspan=\"2\"><b>Title:</b> <input type=\"text\" size=\"40\" name=\"title\" id=\"title\" value=\"$title\"></td></tr>\n";
 	echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\" color\"#ff9966\">Created By <em>Chef $poster</em> Spiced By <em>Chef $userid</em></font></td></tr>\n";
 
 	echo "<tr><td><h3>Current Image</h3></td><td><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td></tr>\n";
