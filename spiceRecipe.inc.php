@@ -27,14 +27,14 @@ if(trim($spicer == $poster)) {
 	echo "form. We created this spice form for the community to be able to \n";
 	echo "create their own version of your recipe.</p>\n";
 }else {
-	$query = "INSERT INTO spiced " .
+	$query = "INSERT INTO spiced (title, shortdesc, poster, spicer, image, ingredients, directions) " .
 		"VALUES('$title', '$shortdesc', '$poster', '$spicer', '$PictName', '$ingredients', '$directions')";
 	$result = mysql_query($query) or die('Sorry, we could not post your recipe to the database at this time');
 	if($result) {
 		echo "<h1>Recipe Has Been Spiced</h1>\n";
 		echo "<p>You've successfully spiced up $poster's recipe for \n";
-		echo "$title. This new version is now offically considered yours \n";
-		echo "<a href=\"index.php\">please follow us home</a></p>\n"; 
+		echo "$title. This new version is now offically considered yours\n";
+		echo "<br><br><a href=\"index.php\">please follow us home</a></p>\n"; 
 	}else {
 		echo "<h1>Sorry</h1>\n";
 		echo "<p>We apologize, but something broke and we were unable to \n";
