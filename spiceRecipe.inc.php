@@ -1,4 +1,5 @@
 <?php
+$recipeid = $_POST['recipeid'];
 $title = $_POST['title'];
 $poster = $_POST['poster'];
 $spicer = $_SESSION['recipeuser'];
@@ -18,8 +19,7 @@ $ingredients = mysql_real_escape_string($ingredients);
 $directions = mysql_real_escape_string($directions);
 
 $thumbnail = getThumb($_FILES['image']);
-$thumbnail = mysql_real_escape_string($thumbnail);)
-
+$thumbnail = mysql_real_escape_string($thumbnail);
 if(trim($spicer == $poster)) {
 	echo "<p>My apologies but, your the poster of this recipe and cannot \n";
 	echo "are not elegible to spice your own recipes at this time. \n";
@@ -28,7 +28,7 @@ if(trim($spicer == $poster)) {
 	echo "create their own version of your recipe.</p>\n";
 }else {
 	$query = "INSERT INTO spiced " .
-		"VALUES(NULL, '$title', '$shortdesc', '$poster', '$spicer', '$thumbnail', '$ingredients', '$directions')";
+		"VALUES('$title', '$shortdesc', '$poster', '$spicer', '$PictName', '$ingredients', '$directions')";
 	$result = mysql_query($query) or die('Sorry, we could not post your recipe to the database at this time');
 	if($result) {
 		echo "<h1>Recipe Has Been Spiced</h1>\n";

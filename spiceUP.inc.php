@@ -41,6 +41,7 @@ echo "<tr><td align=\"left\" colspan=\"2\"><b>Title:</b> <input type=\"text\" si
 	echo "<tr><td align=\"left\" colspan=\"2\"><input type=\"submit\" value=\"Spice\" id=\"spiceUPbtn\"></td></tr>\n";
 	echo "</table>\n";
 
+	echo "<input type=\"hidden\" name=\"recipeid\" value\"$recipeid\">\n";
 	echo "<input type=\"hidden\" name=\"card\" value=\"spiceRecipe\">\n";
 	echo "</form>\n";
 }
