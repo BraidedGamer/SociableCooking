@@ -44,6 +44,7 @@ echo "<tr><td align=\"left\" colspan=\"2\"><b>Title:</b> <input type=\"text\" si
 	echo "<input type=\"hidden\" name=\"poster\" value=\"$poster\">\n";
 	echo "<input type=\"hidden\" name=\"recipeid\" value=\"$recipeid\">\n";
 	echo "<input type=\"hidden\" name=\"card\" value=\"spiceRecipe\">\n";
+	echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"1024000\">\n";
 	echo "</form>\n";
 }
 ?>
