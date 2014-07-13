@@ -1,5 +1,5 @@
 <?php
-$recipeid = $_POST['recipeid'];
+$recipeid = $_POST['id'];
 $title = $_POST['title'];
 $poster = $_POST['poster'];
 $spicer = $_SESSION['recipeuser'];
@@ -25,7 +25,7 @@ if($_FILES['image']['name'] != '') {
 	/* If you spice anothers recipe and don't provide an image this will pull
 	   the image from the original recipe.
 	*/ 
-	
+
 }
 
 if(trim($spicer == $poster)) {
