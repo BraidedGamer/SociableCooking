@@ -18,15 +18,8 @@ $shortdesc = mysql_real_escape_string($shortdesc);
 $ingredients = mysql_real_escape_string($ingredients);
 $directions = mysql_real_escape_string($directions);
 
-if($_FILES['image']['name'] != '') {
-	$thumbnail = getThumb($_FILES['image']);
-	$thumbnail = mysql_real_escape_string($thumbnail);
-} else {
-	/* If you spice anothers recipe and don't provide an image this will pull
-	   the image from the original recipe.
-	*/ 
-
-}
+$thumbnail = getThumb($_FILES['image']);
+$thumbnail = mysql_real_escape_string($thumbnail);
 
 if(trim($spicer == $poster)) {
 	echo "<p>My apologies but, your the poster of this recipe and cannot \n";
