@@ -25,4 +25,6 @@ posting, or editing recipes.
 
 * [ ] Spiced-UP Functionality
 
+* [ ] Switch the catalog code to Classes
+
 *After all that I'll have earned a good break. Question is will I want to take a break?*
