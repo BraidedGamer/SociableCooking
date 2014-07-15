@@ -16,6 +16,7 @@ session_start();
 <body>
 
 <?php
+require_once("myLibrary/secure.php");
 require_once("myLibrary/functions.php");
 connect();
 ?>
