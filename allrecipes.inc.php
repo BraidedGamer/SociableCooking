@@ -28,15 +28,15 @@ if($row[0] == 0)
 		$recipesperpage = 4;
 		$offset = ($thispage - 1) * $recipesperpage;
 		$totpages = ceil($totrecipes / $recipesperpage);
-		$query = "SELECT * FROM recipes ORDER BY recipeid DESC LIMIT
+		$query = "SELECT recipes.*, spiced.* FROM recipes, spiced ORDER BY recipeid DESC LIMIT
 				$offset, $recipesperpage";
 		$result = mysql_query($query) or die('Could not retrieve recipes: ' .mysql_error());
 		while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 		{
-			$recipeid = $row['recipeid'];
-			$title    = $row['title'];
-			$poster   = $row['poster'];
-			$shortdesc= $row['shortdesc'];
+			$recipeid = $row['recipes.recipeid'];
+			$title    = $row['recipes.title'];
+			$poster   = $row['recipes.poster'];
+			$shortdesc= $row['recipes.shortdesc'];
 
 			echo "<table width=\"95%\" cellpadding=\"0\" \n";
 			echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
