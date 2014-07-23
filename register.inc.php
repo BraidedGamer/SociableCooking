@@ -41,13 +41,13 @@ echo "<tr><td colspan=\"2\"><p><font size=\"1\"><b>TERMS OF USE:</b> By logging 
   these very simple rules will be terminated and not allowed back in. <b>Privacy Policy:</b> We do not share user
   information with third parties and try to take every possible precaution to ensure that your information remains
   safe and secure.</font></p></td></tr>\n";
-
+/*
 echo "<tr><td colspan=\"2\" align=\"right\"><font size=\"1\" color=\"#cc9966\">&copy; " . 
 	date("Y") . " Ted's Unique Area Graphics <br> All Rights Reserved</font></td></tr>\n";
 
 echo "<tr><td colspan=\"2\" align=\"right\"><font size=\"1\" color=\"#cc9966\"><a href=\"index.php?card=contact\">Contact</a>\n";
 echo " <a href=\"index.php?card=about\">About</a></td></tr>\n";
-
+*/
 echo "</table></form>\n";
 
 ?>

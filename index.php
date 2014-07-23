@@ -47,6 +47,11 @@ if(!isset($_SESSION['recipeuser']))
 }
 ?>
 </div>
+<div id="footer">
+<?php
+include_once("footer.inc.php");
+?>
+</div>
 </div>
 <script src="scripts/jquery-1.11.0.min.js"></script>
 <script src="scripts/application.js"></script>
