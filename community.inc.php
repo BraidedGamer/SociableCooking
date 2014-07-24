@@ -6,7 +6,7 @@
 if(isset($_SESSION['recipeuser']))
 { 
 	$user = $_SESSION['recipeuser'];
-	$query = "SELECT COUNT(recipeid) FROM recipes WHERE poster != '$user'";
+	$query = "SELECT COUNT(recipeid) FROM recipes WHERE poster != '$user' AND spicer != '$user'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 	
@@ -24,7 +24,7 @@ if(isset($_SESSION['recipeuser']))
 			$recipesperpage = 4;
 			$offset = ($thispage-1)*$recipesperpage;
 			$totpages = ceil($totrecipes / $recipesperpage);
-			$query = "SELECT * FROM recipes WHERE poster != '$user' 
+			$query = "SELECT * FROM recipes WHERE poster != '$user' AND spicer != '$user'
 					ORDER BY recipeid DESC LIMIT $offset,
 					$recipesperpage";
 			$result = mysql_query($query) or die('Could not retrieve recipes: ' . mysql_error());
@@ -35,19 +35,33 @@ if(isset($_SESSION['recipeuser']))
 				$recipeid = $row['recipeid'];
 				$title = $row['title'];
 				$poster = $row['poster'];
+				$spicer = $row['spicer'];
 				$shortdesc = $row['shortdesc'];
-
-				echo "<table width=\"95%\" cellpadding=\"0\"\n";
-				echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-				echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\n";
-				echo "	width=\"80\" height=\"60\"></td>\n";
-				echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
-				echo "$title</a></td></tr>\n";
-				echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n"; 
-				echo "	<em>Chef $poster</em></font></td></tr>\n";
-				echo "<tr><td><p>$shortdesc</p></td></tr>\n";
-				echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
-				echo "</table>\n";
+				if($spicer == '') {
+					echo "<table width=\"95%\" cellpadding=\"0\"\n";
+					echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+					echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\n";
+					echo "	width=\"80\" height=\"60\"></td>\n";
+					echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+					echo "$title</a></td></tr>\n";
+					echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n"; 
+					echo "	<em>Chef $poster</em></font></td></tr>\n";
+					echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+					echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
+					echo "</table>\n";
+				} else {
+					echo "<table width=\"95%\" cellpadding=\"0\" \n";
+                                	echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+                                	echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
+                                	echo "width=\"80\" height=\"60\"></td>\n";
+                                	echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+                                	echo "$title</a></td></tr>\n";
+                                	echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
+                                	echo "<em>Chef $poster</em> and spiced by: <em>Chef $spicer</em>\n";
+                                	echo "</td></tr>\n";
+                                	echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+                                	echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+				}
 			}
 	/** The code after this point is used to count up the total recipes in the catalog
 		minus the current user's recipes and displays a paging navigation bar if

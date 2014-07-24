@@ -17,7 +17,7 @@ if (!isset($_SESSION['recipeuser']))
 	// Code for displaying only the recipes of the current users 
 echo "<h1>My Recipe Book</h1>\n";
 
-$query = "SELECT count(recipeid) from recipes WHERE poster = '$user'";
+$query = "SELECT count(recipeid) from recipes WHERE poster = '$user' OR spicer = '$user'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result);
 
@@ -35,21 +35,36 @@ else
 $recipesperpage = 4;
 $offset = ($thispage - 1) * $recipesperpage;
 $totpages = ceil($totrecipes / $recipesperpage);
-$query = "SELECT * FROM recipes WHERE poster = '$user' ORDER BY recipeid DESC LIMIT $offset, $recipesperpage";
+$query = "SELECT * FROM recipes WHERE poster = '$user' OR spicer = '$user' ORDER BY recipeid DESC LIMIT $offset, $recipesperpage";
 $result = mysql_query($query) or die('Could not retrieve recipes: ' . mysql_error());
 while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 {
 	$recipeid = $row['recipeid'];
 	$title = $row['title'];
 	$poster = $row['poster'];
+	$spicer = $row['spicer'];
 	$shortdesc = $row['shortdesc'];
-	echo "<table width=\"95%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-	echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td>\n";
-	echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">$title</a></td></tr>\n";
-	echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef " . $poster . "</em></font></td></tr>\n";
-	echo "<tr><td><p>" . $shortdesc . "</p></td></tr>\n";
-	echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
-	echo "</table>\n";
+	if($spicer == '') {
+		echo "<table width=\"95%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+		echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td>\n";
+		echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">$title</a></td></tr>\n";
+		echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef " . $poster . "</em></font></td></tr>\n";
+		echo "<tr><td><p>" . $shortdesc . "</p></td></tr>\n";
+		echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
+		echo "</table>\n";
+	} else if($poster != $spicer) {
+		 echo "<table width=\"95%\" cellpadding=\"0\" \n";
+                 echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+                 echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
+                 echo "width=\"80\" height=\"60\"></td>\n";
+                 echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+                 echo "$title</a></td></tr>\n";
+                 echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
+                 echo "<em>Chef $poster</em> and spiced by: <em>Chef $spicer</em>\n";
+                 echo "</td></tr>\n";
+                 echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+                 echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+	}
 }
 
 	//	Paging on main page

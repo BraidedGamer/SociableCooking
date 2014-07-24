@@ -36,18 +36,33 @@ if($row[0] == 0)
 			$recipeid = $row['recipeid'];
 			$title    = $row['title'];
 			$poster   = $row['poster'];
+			$spicer   = $row['spicer'];
 			$shortdesc= $row['shortdesc'];
 
-			echo "<table width=\"95%\" cellpadding=\"0\" \n";
-			echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-			echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
-			echo "width=\"80\" height=\"60\"></td>\n";
-			echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
-			echo "$title</a></td></tr>\n";
-			echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
-			echo " <em>Chef $poster</em></font></td></tr>\n";
-			echo "<tr><td><p>$shortdesc</p></td></tr>\n";
-			echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+			if($spicer == '') {
+				echo "<table width=\"95%\" cellpadding=\"0\" \n";
+				echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+				echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
+				echo "width=\"80\" height=\"60\"></td>\n";
+				echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+				echo "$title</a></td></tr>\n";
+				echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
+				echo " <em>Chef $poster</em></font></td></tr>\n";
+				echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+				echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+			} else {
+				echo "<table width=\"95%\" cellpadding=\"0\" \n";
+				echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+				echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
+				echo "width=\"80\" height=\"60\"></td>\n";
+				echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+				echo "$title</a></td></tr>\n";
+				echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
+				echo "<em>Chef $poster</em> and spiced by: <em>Chef $spicer</em>\n";
+				echo "</td></tr>\n";
+				echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+				echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+			}
 		}
 	/** the code after this point is used to count up the total recipes inthe catalogand display 
 		only four at a time with a pagination bar at the bottom if it's required.
