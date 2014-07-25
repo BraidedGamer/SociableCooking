@@ -27,4 +27,6 @@ posting, or editing recipes.
 
 * [ ] Switch the catalog code to Classes
 
+* [ ] Add Catagory System
+
 *After all that I'll have earned a good break. Question is will I want to take a break?*
