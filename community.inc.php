@@ -6,7 +6,7 @@
 if(isset($_SESSION['recipeuser']))
 { 
 	$user = $_SESSION['recipeuser'];
-	$query = "SELECT COUNT(recipeid) FROM recipes WHERE poster != '$user' AND spicer != '$user'";
+	$query = "SELECT COUNT(recipeid) FROM recipes WHERE poster != '$user' OR spicer != '$user'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 	
@@ -24,7 +24,7 @@ if(isset($_SESSION['recipeuser']))
 			$recipesperpage = 4;
 			$offset = ($thispage-1)*$recipesperpage;
 			$totpages = ceil($totrecipes / $recipesperpage);
-			$query = "SELECT * FROM recipes WHERE poster != '$user' AND spicer != '$user'
+			$query = "SELECT * FROM recipes WHERE poster != '$user' OR spicer != '$user'
 					ORDER BY recipeid DESC LIMIT $offset,
 					$recipesperpage";
 			$result = mysql_query($query) or die('Could not retrieve recipes: ' . mysql_error());
@@ -49,7 +49,7 @@ if(isset($_SESSION['recipeuser']))
 					echo "<tr><td><p>$shortdesc</p></td></tr>\n";
 					echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 					echo "</table>\n";
-				} else {
+				} else if($spicer != $user){
 					echo "<table width=\"95%\" cellpadding=\"0\" \n";
                                 	echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
                                 	echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";

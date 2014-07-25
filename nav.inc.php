@@ -38,11 +38,12 @@ echo "<div id=\"nav\">\n";
 		echo "<td><a href=\"index.php?card=newrecipe\"><strong>POST</strong></a></td>\n";
 	} else if($cardset = 'showrecipe') {
 		$recipeid = $_REQUEST['id'];
-		$query = "SELECT poster FROM recipes WHERE recipeid = $recipeid";
+		$query = "SELECT poster,spicer FROM recipes WHERE recipeid = $recipeid";
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result, MYSQL_ASSOC);
 		$poster = $row['poster'];
-		if($poster != $userid) {
+		$spicer = $row['spicer'];
+		if($poster != $userid && $spicer != $userid) {
 			echo "<td><a href=\"index.php?card=spiceUP&id=$recipeid\"><strong>SPICE</strong></a></td>\n";
 		}  else {
 			echo "";

@@ -36,35 +36,51 @@ body {
 if(isset($_SESSION['recipeuser']))
 {
 	include("myLibrary/functions.php");
+	include("myLibrary/secure.php");
 	connect();
 	
 	$recipeid = $_GET['id'];
 	
-	$query = "SELECT title,poster,shortdesc,ingredients,directions FROM recipes WHERE recipeid = $recipeid";
+	$query = "SELECT title,poster,spicer,shortdesc,ingredients,directions FROM recipes WHERE recipeid = $recipeid";
 	$result = mysql_query($query) or die('Could not find recipe');
 	$row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 	
 	$title = $row['title'];
 	$poster = $row['poster'];
+	$spicer = $row['spicer'];
 	$shortdesc = $row['shortdesc'];
 	$ingredients = $row['ingredients'];
 	$directions = $row['directions'];
 	
 	$ingredients = nl2br($ingredients);
 	$directions = nl2br($directions);
-	
-	echo "<table width=\"500px\" height=\"200px\" align=\"center\"\n";
-	echo "<tr><td rowspan=\"3\" valign=\"top\"><img src=\"showimage.php?id=$recipeid\" width=\"80px\" height=\"60px\"></td>\n";
-	echo "<td height=\"10\"><prinTIT>$title</prinTIT></td></tr>\n";
-	echo "<tr><td height=\"10\"><em>posted by: Chef " . $poster . "</em></td></tr>\n";
-	echo "<tr><td height=\"10\">$shortdesc</td></tr>\n";
-	echo "<tr><td colspan=\"2\"><hr id=\"printHR\"></td></tr>\n";
-	echo "<tr><td colspan=\"2\"><ingredients>Ingredients:</ingredients></td></tr>\n";
-	echo "<tr><td colspan=\"2\" valign=\"top\">$ingredients</td></tr>\n";
-	echo "<tr><td colspan=\"2\"><directions>Directions:</directions></td></tr>\n";
-	echo "<tr><td colspan=\"2\" valign=\"top\">$directions</td></tr>\n";
-	echo "<tr><td colspan=\"2\" align=\"right\" valign=\"bottom\"><prinMARK>SociableCooking.com</prinMARK></td></tr>\n";
-	echo "</table>\n";
+	if($spicer == '') {
+		echo "<table width=\"500px\" height=\"200px\" align=\"center\">\n";
+		echo "<tr><td rowspan=\"3\" valign=\"top\"><img src=\"showimage.php?id=$recipeid\" width=\"80px\" height=\"60px\"></td>\n";
+		echo "<td height=\"10\"><prinTIT>$title</prinTIT></td></tr>\n";
+		echo "<tr><td height=\"10\">posted by: <em>Chef $poster</em></td></tr>\n";
+		echo "<tr><td height=\"10\">$shortdesc</td></tr>\n";
+		echo "<tr><td colspan=\"2\"><hr id=\"printHR\"></td></tr>\n";
+		echo "<tr><td colspan=\"2\"><ingredients>Ingredients:</ingredients></td></tr>\n";
+		echo "<tr><td colspan=\"2\" valign=\"top\">$ingredients</td></tr>\n";
+		echo "<tr><td colspan=\"2\"><directions>Directions:</directions></td></tr>\n";
+		echo "<tr><td colspan=\"2\" valign=\"top\">$directions</td></tr>\n";
+		echo "<tr><td colspan=\"2\" align=\"right\" valign=\"bottom\"><prinMARK>SociableCooking.com</prinMARK></td></tr>\n";
+		echo "</table>\n";
+	} else {
+		echo "<table width=\"500px\" height=\"200px\" align=\"center\">\n";
+                echo "<tr><td rowspan=\"3\" valign=\"top\"><img src=\"showimage.php?id=$recipeid\" width=\"80px\" height=\"60px\"></td>\n";
+                echo "<td height=\"10\"><prinTIT>$title</prinTIT></td></tr>\n";
+                echo "<tr><td height=\"10\">posted by: <em>Chef $poster</em> and spiced by: <em>Chef $spicer</em></td></tr>\n";
+                echo "<tr><td height=\"10\">$shortdesc</td></tr>\n";
+                echo "<tr><td colspan=\"2\"><hr id=\"printHR\"></td></tr>\n";
+                echo "<tr><td colspan=\"2\"><ingredients>Ingredients:</ingredients></td></tr>\n";
+                echo "<tr><td colspan=\"2\" valign=\"top\">$ingredients</td></tr>\n";
+                echo "<tr><td colspan=\"2\"><directions>Directions:</directions></td></tr>\n";
+                echo "<tr><td colspan=\"2\" valign=\"top\">$directions</td></tr>\n";
+                echo "<tr><td colspan=\"2\" align=\"right\" valign=\"bottom\"><prinMARK>SociableCooking.com</prinMARK></td></tr>\n";
+                echo "</table>\n";
+	}
 }
 ?>
 </body>

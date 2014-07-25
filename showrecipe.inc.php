@@ -1,34 +1,53 @@
 <?php
 	$recipeid = $_GET['id'];
 
-	$query = "SELECT title,poster,shortdesc,ingredients,directions from recipes where recipeid = $recipeid";
+	$query = "SELECT title,poster,spicer,shortdesc,ingredients,directions from recipes where recipeid = $recipeid";
 	$result = mysql_query($query) or die('Sorry, could not find recipe requested');
 	$row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 
 		$title = $row['title'];
 		$poster = $row['poster'];
+		$spicer = $row['spicer'];
 		$shortdesc = $row['shortdesc'];
 		$ingredients = $row['ingredients'];
 		$directions = $row['directions'];
 
 		$ingredients = nl2br($ingredients);
 		$directions = nl2br($directions);
+	if($spicer == '') {
+		echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"center\">\n";
 	
-	echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"center\">\n";
-	
-	echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
-	echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
-	echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT></td></tr>\n";
-	echo "<tr><td valign=\"top\"><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef $poster</em></font></td></tr>\n";
+		echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
+		echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
+		echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT></td></tr>\n";
+		echo "<tr><td valign=\"top\"><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef $poster</em></font></td></tr>\n";
 
-	echo "<tr><td valign=\"top\"><p> $shortdesc </p></td></tr>\n";
-	echo "<tr><td valign=\"bottom\"><ingredients>Ingredients</ingredients></td></tr>\n";
-	echo "<tr><td valign=\"top\">" . $ingredients . "</td></tr>\n";
+		echo "<tr><td valign=\"top\"><p>$shortdesc</p></td></tr>\n";
+		echo "<tr><td valign=\"bottom\"><ingredients>Ingredients</ingredients></td></tr>\n";
+		echo "<tr><td valign=\"top\">" . $ingredients . "</td></tr>\n";
 
-	echo "<tr><td valign=\"bottom\"><directions>Directions</directions></td></tr>\n";
-	echo "<tr><td valign=\"top\">" . $directions . "</td></tr>\n";
+		echo "<tr><td valign=\"bottom\"><directions>Directions</directions></td></tr>\n";
+		echo "<tr><td valign=\"top\">" . $directions . "</td></tr>\n";
 
-	echo "</table>\n";
+		echo "</table>\n";
+	} else {
+		echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"center\">\n";
+
+                echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
+                echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
+                echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT></td></tr>\n";
+                echo "<tr><td valign=\"top\"><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef $poster</em>\n";
+		echo " and spiced by: <em>Chef $spicer</em></font></td></tr>\n";
+
+                echo "<tr><td valign=\"top\"><p>$shortdesc</p></td></tr>\n";
+                echo "<tr><td valign=\"bottom\"><ingredients>Ingredients</ingredients></td></tr>\n";
+                echo "<tr><td valign=\"top\">" . $ingredients . "</td></tr>\n";
+
+                echo "<tr><td valign=\"bottom\"><directions>Directions</directions></td></tr>\n";
+                echo "<tr><td valign=\"top\">" . $directions . "</td></tr>\n";
+
+                echo "</table>\n";
+	}
 
 	$query = "SELECT COUNT(commentid) FROM comments WHERE recipeid = $recipeid";
 	$result = mysql_query($query);
