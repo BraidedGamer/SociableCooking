@@ -13,7 +13,7 @@ echo "shortly. Said email will contain a link to the reset password form.</p>";
 echo "<form action=\"index.php\" method=\"post\" target=\"_self\">\n";
 echo "<table width=\"200px\" border=\"0\" cellspacing=\"2.5px\" cellpadding=\"0\" align=\"center\">\n";
 echo "<tr><td align=\"right\"><font color=\"#000\">\n";
-echo "<b>E-Mail</b></font></td>\n";
+echo "<b>EMail</b></font></td>\n";
 echo "<td align=\"left\">\n";
 echo "<input type=\"text\" name=\"email-retrieval\" id=\"emailRetrieval\">\n";
 echo "</td></tr>\n";
