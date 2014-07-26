@@ -43,9 +43,9 @@ echo "<div id=\"nav\">\n";
 		$row = mysql_fetch_array($result, MYSQL_ASSOC);
 		$poster = $row['poster'];
 		$spicer = $row['spicer'];
-		if($poster != $userid && $spicer != $userid) {
+		if($poster != $userid && $spicer == '') {
 			echo "<td><a href=\"index.php?card=spiceUP&id=$recipeid\"><strong>SPICE</strong></a></td>\n";
-		}  else {
+		} else {
 			echo "";
 		}
 	}
@@ -65,8 +65,9 @@ echo "<div id=\"nav\">\n";
 		if(isset($_SESSION['recipeuser']) && $poster == $_SESSION['recipeuser'])
 		{
 			echo "<td><a href=\"index.php?card=updaterecipe&id=$recipeid\"><strong>Edit</strong></a></td>\n";
-		}else
-		{
+		} else if($spicer == $userid) {
+			echo "<td><a href=\"index.php?card=updateSpice&id=$recipeid\"><strong>Edit</strong></a></td>\n";
+		} else {
 			echo "\n";
 		}
 

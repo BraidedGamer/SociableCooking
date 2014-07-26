@@ -15,7 +15,7 @@ if (!isset($_SESSION['recipeuser']))
 {
 	$user = $_SESSION['recipeuser'];
 	// Code for displaying only the recipes of the current users 
-echo "<h1>My Recipe Book</h1>\n";
+echo "<h1>My Recipe Catalog</h1>\n";
 
 $query = "SELECT count(recipeid) from recipes WHERE poster = '$user' OR spicer = '$user'";
 $result = mysql_query($query);

@@ -11,16 +11,18 @@
 	$ingredients = $row['ingredients'];
 	$directions = $row['directions'];
 	
-if (!isset($_SESSION['recipeuser']) && $poster == $_SESSION['recipeuser'])
-{
+if (!isset($_SESSION['recipeuser'])) {
 	echo "<h1>Sorry, your not logged in</h1>\n";
 	echo "<p>Sorry, you do not have permission to post recipes. For you to post a recipe you must first register. If you are new here please use the following link to get to the registeration page. There are no subscription fees associated with this site.\n";
-	echo "<a href=\"index.php?card=register\">Registration This Way</a></p>\n";
+	echo "<br><br><a href=\"index.php?card=register\">Registration This Way</a></p>\n";
 	echo "<p>If you are a returning user please use the following link to login.</p>\n";
 	echo "<a href=\"index.php?card=login\">Please login to post recipes</a>\n";
-} else
-{
-	$userid = $_SESSION['valid_recipe_user'];
+} else if($poster != $_SESSION['recipeuser']) {
+        echo "<h1>Sorry, this is not your recipe</h1>\n";
+        echo "<p>Sorry, but you do not have the proper permissions to edit this recipe. Please don't think we're trying to be mean, we're simply trying to be professional with the site.\n";
+        echo "<br><br><a href=\"index.php\">This Way Home</a></p>\n";
+} else {
+	$userid = $_SESSION['recipeuser'];
 	echo "<form enctype=\"multipart/form-data\" action=\"index.php\" method=\"post\">\n";
 	echo "<table width=\"80%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">";
 	echo "<tr><td align=\"center\" colspan=\"2\"><h1>Update Your Recipe</h1></td></tr>\n";

@@ -31,8 +31,8 @@ if(get_magic_quotes_gpc())
 if($result)
 {
 	echo "<h1>Recipe Updated</h1>\n";
-	echo "<p>You've successfully updated a recipes that you posted to the site. We here at Sociable Cooking are very thankful for\n";
-	echo " your contributions to our catalogue of recipes. Please continue to post new recipes!</p>\n";
+	echo "<p>You've successfully updated a recipe that you posted to the site. We here at Sociable Cooking are very thankful for\n";
+	echo " your contributions to our catalog of recipes. Please continue to post new recipes!</p>\n";
 }else
 {
 	echo "<h1>Recipe Update Failed</h1>\n";
