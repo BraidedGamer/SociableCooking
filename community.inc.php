@@ -16,6 +16,8 @@ if(isset($_SESSION['recipeuser']))
 		echo "No one else has posted any recipes\n";
 	}else
 	{
+		echo "<h1>Community Catalog</h1>\n";
+
 		$totrecipes = $row[0];
 		if(!isset($_GET['page']))
 			$thispage = 1;
@@ -30,8 +32,6 @@ if(isset($_SESSION['recipeuser']))
 			$result = mysql_query($query) or die('Could not retrieve recipes: ' . mysql_error());
 			while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 			{
-				echo "<h1>Community Catalog</h1>\n";
-
 				$recipeid = $row['recipeid'];
 				$title = $row['title'];
 				$poster = $row['poster'];
@@ -40,8 +40,8 @@ if(isset($_SESSION['recipeuser']))
 				if($spicer == '') {
 					echo "<table width=\"95%\" cellpadding=\"0\"\n";
 					echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-					echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\n";
-					echo "	width=\"80\" height=\"60\"></td>\n";
+					echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\"`\n";
+					echo "width=\"80\" height=\"60\"></td>\n";
 					echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
 					echo "$title</a></td></tr>\n";
 					echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n"; 
@@ -97,12 +97,12 @@ if(isset($_SESSION['recipeuser']))
 		{
 			$nextpage = "";
 		}
-		echo "<table width=\"80\" align=\"center\" cellspacing=\"5\" cellpadding=\"3\">\n";
-		echo "<tr><td colspan=\"3\" align=\"center\">Page: <page>$thispage</page> of <page>$totpages</page>\n";
-		echo "</td></tr>\n";
-		echo "<tr><td align=\"left\" width=\"35%\"><page>$prevpage</page></td>\n";
-		echo "<td align=\"center\"> <page>$bar</page></td>\n";
-		echo "<td align=\"right\" width=\"30%\"><page>$nextpage</page></td></tr></table>\n";
+
+		echo "<table width=\"80%\" align=\"center\" cellspacing=\"5\" cellpadding=\"3\">\n";
+        	echo "<tr><td colspan=\"3\" align=\"center\">Page: <page>$thispage</page> of <page>$totpages</page></td></tr>\n";
+        	echo "<tr><td align=\"left\" width=\"35%\"><page>$prevpage</page></td>\n";
+        	echo "<td align=\"center\"> <page>$bar</page> </td>\n";
+        	echo "<td align=\"right\" width=\"30%\"><page>$nextpage</page></td></tr></table>";
 	}
 }else
 {

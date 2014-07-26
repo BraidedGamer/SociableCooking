@@ -23,7 +23,7 @@ posting, or editing recipes.
 
 * [ ] I'll add a status function and and a more advanced profile page.
 
-* [ ] Spiced-UP Functionality
+* [x] Spiced-UP Functionality
 
 * [ ] Switch the catalog code to Classes
 
