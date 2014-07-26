@@ -29,4 +29,6 @@ posting, or editing recipes.
 
 * [ ] Add Catagory System
 
+* [ ] Buckysroom.org Ad placement
+
 *After all that I'll have earned a good break. Question is will I want to take a break?*
