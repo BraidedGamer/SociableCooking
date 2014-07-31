@@ -31,4 +31,6 @@ posting, or editing recipes.
 
 * [ ] Buckysroom.org Ad placement
 
+* [ ] Add a little perl flare to the site, greeting script
+
 *After all that I'll have earned a good break. Question is will I want to take a break?*
