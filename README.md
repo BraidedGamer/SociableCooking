@@ -27,9 +27,11 @@ posting, or editing recipes.
 
 * [ ] Switch the catalog code to Classes
 
-* [ ] Add Catagory System
+* [ ] Catagory System
 
-* [ ] Buckysroom.org Ad placement
+* [ ] Profile System
+
+* [ ] Life Tip System
 
 * [ ] Add a little perl flare to the site, greeting script
 
