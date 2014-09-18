@@ -12,7 +12,17 @@ if (!isset($_SESSION['recipeuser']))
 	echo "<table width=\"80%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">";
 	echo "<tr><td colspan=\"2\" align=\"center\"><h1>Enter your Recipe</h1></td></tr>\n";
 	echo "<tr><td align=\"left\"><b>Title:</b></td><td align=\"left\"><input type=\"text\" size=\"40\" name=\"title\" id=\"title\"></td></tr>\n";
-	
+	echo "<tr><td align=\"left\"><b>Category:</b></td><td align=\"left\"><select name=\"category\">\n";
+	echo "<option value=\"default\">Please select a category</option>\n";
+	$query = "SELECT catid,name FROM categories";
+	$result = mysql_query($query);
+	while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+		$catid = $row['catid'];
+		$name = $row['name'];
+		echo "<option value=\"$catid\">$name</option>\n";
+	}
+	echo "</select></td></tr>\n";	
+
 	echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"1024000\">\n";
    echo "<tr><td>Picture</td><td><input type=\"file\" name=\"image\"></td></tr>\n";
    echo "<tr><td colspan=\"2\"><em>Please ensure that your image is no larger than 80px x 60px. As well ensure that all images are jpeg filetypes.</td></tr>\n"; 

@@ -1,16 +1,22 @@
 <?php
 	$recipeid = $_GET['id'];
-	$query = "SELECT recipeid, title, poster, shortdesc, ingredients, directions FROM recipes WHERE recipeid = $recipeid";
+	$query = "SELECT catid, title, poster, shortdesc, ingredients, directions FROM recipes WHERE recipeid = $recipeid";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
 	
-	$recipeid = $row['recipeid'];
+	$catid = $row['catid'];
 	$title = $row['title'];
 	$poster = $row['poster'];
 	$shortdesc = $row['shortdesc'];
 	$ingredients = $row['ingredients'];
 	$directions = $row['directions'];
 	
+	$query = "SELECT catid, name FROM categories WHERE catid = $catid";
+	$result = mysql_query($query);
+	$row = mysql_fetch_array($result, MYSQL_ASSOC);
+
+	$catname = $row['name'];
+
 if (!isset($_SESSION['recipeuser'])) {
 	echo "<h1>Sorry, your not logged in</h1>\n";
 	echo "<p>Sorry, you do not have permission to post recipes. For you to post a recipe you must first register. If you are new here please use the following link to get to the registeration page. There are no subscription fees associated with this site.\n";
@@ -29,6 +35,19 @@ if (!isset($_SESSION['recipeuser'])) {
 	echo "<tr><td align=\"left\" colspan=\"2\"><recipeTIT>$title</recipeTIT></td></tr>\n";
 	echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\" color=\"#ff9966\">posted by: <em>$poster</em></font></td></tr>\n";
 	
+	echo "<tr><td align=\"left\"><b>Category:</b></td><td align=\"left\"><select name=\"category\">\n";
+	$query = "SELECT catid, name FROM categories";
+	$result = mysql_query($query);
+	while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+		$tempcatid = $row['catid'];
+		$name = $row['name'];
+		if($tempcatid == $catid) 
+			echo "<option value=\"$tempcatid\" selected=\"selected\">$name</option>\n";
+		else 
+			echo "<option value=\"$tempcatid\">$name</option>";
+	}
+	echo "</select></td></tr>\n";
+
    echo "<tr><td><h3>Image</h3></td><td><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td></tr>\n";
    echo "<tr><td><h3>Update Image</h3></td><td><input type=\"file\" name=\"image\"></td></tr>\n";
    echo "<tr><td colspan=\"2\"><em>Please ensure that your image is no larger than 80px x 60px. As well ensure that all images are jpeg filetypes.</td></tr>\n";
