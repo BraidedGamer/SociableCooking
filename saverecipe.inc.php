@@ -1,5 +1,6 @@
 <?php
 $recipeid = $_POST['recipeid'];
+$catid = $_POST['category'];
 
 $shortdesc = $_POST['shortdesc'];
 $ingredients = $_POST['ingredients'];
@@ -22,10 +23,10 @@ if(get_magic_quotes_gpc())
   		$thumbnail = getThumb($_FILES['image']);
   		$thumbnail = mysql_real_escape_string($thumbnail);
 	
-		$query = "UPDATE recipes SET shortdesc='$shortdesc', image='$thumbnail', ingredients='$ingredients', directions='$directions' WHERE recipeid = $recipeid";
+		$query = "UPDATE recipes SET catid='$catid', shortdesc='$shortdesc', image='$thumbnail', ingredients='$ingredients', directions='$directions' WHERE recipeid = $recipeid";
 	} else
 	{
-		$query = "UPDATE recipes SET shortdesc='$shortdesc', ingredients='$ingredients', directions='$directions' WHERE recipeid = $recipeid";
+		$query = "UPDATE recipes SET catid='$catid', shortdesc='$shortdesc', ingredients='$ingredients', directions='$directions' WHERE recipeid = $recipeid";
 	}
 	$result = mysql_query($query) or die(mysql_error());
 if($result)

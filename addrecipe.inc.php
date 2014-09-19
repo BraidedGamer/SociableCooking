@@ -1,5 +1,6 @@
 <?php
 
+  $catid = $_POST['category'];
   $title = $_POST['title'];
   $poster = $_POST['poster'];
   $shortdesc = $_POST['shortdesc'];
@@ -13,6 +14,7 @@
   	$ingredients = stripslashes($ingredients);
   	$directions = stripslashes($directions);
   }
+  $catid = mysql_real_escape_string($catid);
   $title = mysql_real_escape_string($title);
   $shortdesc = mysql_real_escape_string($shortdesc);
   $ingredients = mysql_real_escape_string($ingredients);
@@ -26,8 +28,8 @@
      echo "<p>Sorry, each recipe must have a poster</p>\n";
   }else
   {
-    $query = "INSERT INTO recipes (title, shortdesc, poster, image, ingredients, directions) " .
-       " VALUES ('$title', '$shortdesc', '$poster', '$thumbnail', '$ingredients', '$directions')";
+    $query = "INSERT INTO recipes (catid, title, shortdesc, poster, image, ingredients, directions) " .
+       " VALUES ('$catid', '$title', '$shortdesc', '$poster', '$thumbnail', '$ingredients', '$directions')";
 
     $result = mysql_query($query) or die('Sorry, we could not post your recipe to the database at this time');
 

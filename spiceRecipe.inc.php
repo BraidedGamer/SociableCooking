@@ -1,5 +1,6 @@
 <?php
 $recipeid = $_POST['id'];
+$catid = $_POST['category'];
 $title = $_POST['title'];
 $poster = $_POST['poster'];
 $spicer = $_SESSION['recipeuser'];
@@ -28,8 +29,8 @@ if(trim($spicer == $poster)) {
 	echo "form. We created this spice form for the community to be able to \n";
 	echo "create their own version of your recipe.</p>\n";
 }else {
-	$query = "INSERT INTO recipes(title, shortdesc, poster, spicer, image, ingredients, directions) " .
-		"VALUES('$title', '$shortdesc', '$poster', '$spicer', '$thumbnail', '$ingredients', '$directions')";
+	$query = "INSERT INTO recipes(catid, title, shortdesc, poster, spicer, image, ingredients, directions) " .
+		"VALUES('$catid', '$title', '$shortdesc', '$poster', '$spicer', '$thumbnail', '$ingredients', '$directions')";
 	$result = mysql_query($query) or die('Sorry, we could not post your recipe to the database at this time');
 	if($result) {
 		echo "<h1>Recipe Has Been Spiced</h1>\n";
