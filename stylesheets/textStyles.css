@@ -183,6 +183,30 @@ page a:hover {
 	text-decoration:none;
 }
 
+catname {
+	padding: 4px;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+
+	background:#33cc33;
+	color:#f2f1f0;
+	text-decoration:none;
+	float:right;
+}
+
+catPrint {
+        padding: 4px;
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+
+        background:#cc9966;
+        color:#f2f1f0;
+        text-decoration:none;
+        float:right;
+}
+
 h1 {
 	font-family: 'Condiment', cursive;
 	font-weight: 100;

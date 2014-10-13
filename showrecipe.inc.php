@@ -1,10 +1,11 @@
 <?php
 	$recipeid = $_GET['id'];
 
-	$query = "SELECT title,poster,spicer,shortdesc,ingredients,directions from recipes where recipeid = $recipeid";
+	$query = "SELECT catid,title,poster,spicer,shortdesc,ingredients,directions from recipes where recipeid = $recipeid";
 	$result = mysql_query($query) or die('Sorry, could not find recipe requested');
 	$row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 
+		$catid = $row['catid'];
 		$title = $row['title'];
 		$poster = $row['poster'];
 		$spicer = $row['spicer'];
@@ -14,12 +15,19 @@
 
 		$ingredients = nl2br($ingredients);
 		$directions = nl2br($directions);
+
+		$catquery = "SELECT * FROM categories WHERE catid = $catid";
+                $catresult = mysql_query($catquery) or die('Could not retrieve category identification: ' .mysql_error());
+                $catrow = mysql_fetch_array($catresult, MYSQL_ASSOC);
+                $category = $catrow['name'];
+
+
 	if($spicer == '') {
 		echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"center\">\n";
 	
 		echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
 		echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
-		echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT></td></tr>\n";
+		echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT><catname>$category</catname></td></tr>\n";
 		echo "<tr><td valign=\"top\"><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef $poster</em></font></td></tr>\n";
 
 		echo "<tr><td valign=\"top\"><p>$shortdesc</p></td></tr>\n";
@@ -35,7 +43,7 @@
 
                 echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
                 echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
-                echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT></td></tr>\n";
+                echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT><catname>$category</catname></td></tr>\n";
                 echo "<tr><td valign=\"top\"><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef $poster</em>\n";
 		echo " and spiced by: <em>Chef $spicer</em></font></td></tr>\n";
 

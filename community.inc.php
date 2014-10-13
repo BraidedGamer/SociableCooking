@@ -33,34 +33,42 @@ if(isset($_SESSION['recipeuser']))
 			while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 			{
 				$recipeid = $row['recipeid'];
+				$catid = $row['catid'];
 				$title = $row['title'];
 				$poster = $row['poster'];
 				$spicer = $row['spicer'];
 				$shortdesc = $row['shortdesc'];
-				if($spicer == '') {
-					echo "<table width=\"95%\" cellpadding=\"0\"\n";
-					echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-					echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\"`\n";
-					echo "width=\"80\" height=\"60\"></td>\n";
-					echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
-					echo "$title</a></td></tr>\n";
-					echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n"; 
-					echo "	<em>Chef $poster</em></font></td></tr>\n";
-					echo "<tr><td><p>$shortdesc</p></td></tr>\n";
-					echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
-					echo "</table>\n";
-				} else if($spicer != $user){
-					echo "<table width=\"95%\" cellpadding=\"0\" \n";
-                                	echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
-                                	echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
-                                	echo "width=\"80\" height=\"60\"></td>\n";
-                                	echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
-                                	echo "$title</a></td></tr>\n";
-                                	echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
-                                	echo "<em>Chef $poster</em> and spiced by: <em>Chef $spicer</em>\n";
-                                	echo "</td></tr>\n";
-                                	echo "<tr><td><p>$shortdesc</p></td></tr>\n";
-                                	echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+
+				$catquery = "SELECT * FROM categories WHERE catid = $catid";
+                        	$catresult = mysql_query($catquery) or die('Could not retrieve category identification: ' .mysql_error());
+                        	while($catrow = mysql_fetch_array($catresult, MYSQL_ASSOC)) {
+                                	$category = $catrow['name'];
+
+					if($spicer == '') {
+						echo "<table width=\"95%\" cellpadding=\"0\"\n";
+						echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+						echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\"`\n";
+						echo "width=\"80\" height=\"60\"></td>\n";
+						echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+						echo "$title</a><catname>$category</catname></td></tr>\n";
+						echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n"; 
+						echo "	<em>Chef $poster</em></font></td></tr>\n";
+						echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+						echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
+						echo "</table>\n";
+					} else if($spicer != $user){
+						echo "<table width=\"95%\" cellpadding=\"0\" \n";
+                                		echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+                                		echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
+                                		echo "width=\"80\" height=\"60\"></td>\n";
+                                		echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
+                                		echo "$title</a><catname>$category</catname></td></tr>\n";
+                                		echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: \n";
+                                		echo "<em>Chef $poster</em> and spiced by: <em>Chef $spicer</em>\n";
+                                		echo "</td></tr>\n";
+                                		echo "<tr><td><p>$shortdesc</p></td></tr>\n";
+                                		echo "<tr><td colspan=\"2\"><hr></td></tr></table>\n";
+					}
 				}
 			}
 	/** The code after this point is used to count up the total recipes in the catalog
