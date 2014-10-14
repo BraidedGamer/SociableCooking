@@ -27,7 +27,9 @@ posting, or editing recipes.
 
 * [ ] Switch the catalog code to Classes
 
-* [ ] Catagory System
+* [ ] Fitration System
+
+* [x] Categorical System
 
 * [ ] Profile System
 
