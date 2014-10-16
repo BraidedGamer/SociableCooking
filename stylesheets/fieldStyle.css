@@ -258,10 +258,21 @@ select {
 	padding 5px 5px;
 	width: 35%;
 	border: none;
+
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
 	box-shadow: none;
-	background: transparent;
+	background: #33cc33;
+	color: #f2f1f0;
 	background-image: none;
+	-webkit-appearance: none;
 }
 select:focus {
-	outline:none;
+	outline: none;
+	background: #f2f1f0;
+	color: black;
+	background-image: none;
+	-webkit-appearance: none;
 }
