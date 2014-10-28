@@ -31,6 +31,8 @@ posting, or editing recipes.
 
 * [x] Categorical System
 
+* [ ] Rework Navigation System
+
 * [ ] Profile System
 
 * [ ] Life Tip System
