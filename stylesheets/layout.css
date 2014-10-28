@@ -124,6 +124,7 @@
 }
 
 #sideBar {
+		display:none;
 	float: right;
 	width: 290.00px;
 	height: 720px;

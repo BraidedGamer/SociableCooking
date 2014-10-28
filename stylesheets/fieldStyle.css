@@ -223,7 +223,7 @@ form {
 
 #shortdesc, #comment {
 	width: 500px;
-	height: 100px;
+	height: 50px;
 	
 	padding: 0px 0px 0px 10px;
 	
@@ -240,7 +240,7 @@ form {
 
 #ingredients, #directions {
 	width: 500px;
-	height: 160px;
+	height: 130px;
 	
 	padding: 0px 0px 0px 10px;
 
@@ -253,4 +253,26 @@ form {
 	
 	font: normal 12px Arial, Helvetica, sans-serif;
 	color: #BE2625;
+}
+select {
+ 	padding 5px 5px;
+	width: 40%;
+ 	border: none;
+ 
+         border-radius: 5px;
+         -moz-border-radius: 5px;
+         -webkit-border-radius: 5px;
+ 
+ 	box-shadow: none;
+ 	background: #33cc33;
+ 	color: #f2f1f0;
+ 	background-image: none;
+ 	-webkit-appearance: none;
+}
+select:focus {
+ 	outline: none;
+ 	background: #f2f1f0;
+ 	color: black;
+ 	background-image: none;
+ 	-webkit-appearance: none;
 }
