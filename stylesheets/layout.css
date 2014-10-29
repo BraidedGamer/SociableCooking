@@ -1,6 +1,10 @@
 /* 	Designed and Coded by Theodore Philip Rees to advance my current 
 	skills in web design and showcase my knowledge of web programming! 
 */
+* {
+	margin:0px;
+	padding:0px;
+}
 
 #wrapper {
 	width: 1000px;
@@ -57,7 +61,12 @@
 	color: #f2f1f0;
 }
 
-#nav {
+	/* rules for navigation menu */
+
+	/* ========================================== */
+
+ul#nav, ul.sub1, ul.sub2 {
+	list-style-type:none;
 	float:right;
 	width: 300px;
 	height: 11px;
@@ -68,7 +77,7 @@
 	color: #f2f1f0;
 }
 
-#nav a {
+ul#nav a {
 	height:30px;
 	
 	display: block;
@@ -109,6 +118,48 @@
 	font-weight: bold;
 	color: #f2f1f0;
 }
+ul#nav .sub1 li {
+}
+ul#nav .sub1 a {
+	margin-top: 5px;
+}
+ul#nav .sub2 a {
+	margin-left: 3px;
+}
+ul#nav li:hover > a {
+	background-color: #CFC;
+}
+ul#nav li:hover a:hover {
+	background-color: #FF0;
+}
+ul#nav ul.sub1 {
+	display: none;
+	position: absolute;
+	top: 26px;
+	left: 0px;
+}
+ul#nav ul.sub2 {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 126px;
+}
+ul#nav li:hover .sub1 {
+	display: block;
+}
+ul#nav .sub1 li:hover .sub2 {
+	display: block;
+}
+.darrow {
+	font-size: 11pt;
+	position: absolute;
+	top: 5px;
+	right: 4px;
+}
+
+	/* rules for navigation menu END */
+
+	/* ========================================== */
 
 #search {
 	position: relative;
