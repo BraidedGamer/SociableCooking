@@ -45,8 +45,8 @@ if(isset($_SESSION['recipeuser']))
                                 	$category = $catrow['name'];
 
 					if($spicer == '') {
-						echo "<table width=\"95%\" cellpadding=\"0\"\n";
-						echo "	cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+						echo "<table width=\"100%\" cellpadding=\".5px\"\n";
+						echo "	cellspacing=\"1px\" border=\"0\">\n";
 						echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\"`\n";
 						echo "width=\"80\" height=\"60\"></td>\n";
 						echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";
@@ -57,8 +57,8 @@ if(isset($_SESSION['recipeuser']))
 						echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 						echo "</table>\n";
 					} else if($spicer != $user){
-						echo "<table width=\"95%\" cellpadding=\"0\" \n";
-                                		echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+						echo "<table width=\"100%\" cellpadding=\".5px\" \n";
+                                		echo "cellspacing=\"1px\" border=\"0\">\n";
                                 		echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
                                 		echo "width=\"80\" height=\"60\"></td>\n";
                                 		echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";

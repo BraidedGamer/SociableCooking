@@ -52,7 +52,7 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
         	$category = $catrow['name'];
 
 		if($spicer == '') {
-			echo "<table width=\"95%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+			echo "<table width=\"100%\" cellpadding=\".5px\" cellspacing=\"1\" border=\"0\">\n";
 			echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" width=\"80\" height=\"60\"></td>\n";
 			echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">$title</a><catname>$category</catname></td></tr>\n";
 			echo "<tr><td><font size=\"1\" color=\"#ff9966\">posted by: <em>Chef " . $poster . "</em></font></td></tr>\n";
@@ -60,8 +60,8 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 			echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 			echo "</table>\n";
 		} else if($poster != $spicer && $poster != $user) {
-		 	echo "<table width=\"95%\" cellpadding=\"0\" \n";
-                 	echo "cellspacing=\"5\" border=\"0\" align=\"center\">\n";
+		 	echo "<table width=\"100%\" cellpadding=\".5px\" \n";
+                 	echo "cellspacing=\"1px\" border=\"0\">\n";
                  	echo "<tr><td rowspan=\"3\"><img src=\"showimage.php?id=$recipeid\" \n";
                  	echo "width=\"80\" height=\"60\"></td>\n";
                  	echo "<td><a href=\"index.php?card=showrecipe&id=$recipeid\">\n";

@@ -13,7 +13,7 @@ if(mysql_num_rows($result) == 0)
 	
 echo "<form action=\"index.php\" method=\"post\" target=\"_self\">\n";
 
-echo "<table width=\"200px\" border=\"0\" cellspacing=\"2.5\" cellpadding=\"0\" align=\"center\">\n";
+echo "<table width=\"45%\" border=\"0\" cellspacing=\"1px\" cellpadding=\".5px\" align=\"center\">\n";
 echo "<tr><td align=\"right\"><font color=\"#000\">\n";
 echo "<b>UserName:</b>\n";
 echo "</font></td>\n";
