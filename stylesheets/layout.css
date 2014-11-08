@@ -63,6 +63,8 @@
 
 ul#nav, ul.sub1, ul.sub2 {
 	list-style-type:none;
+	font-family: Arial, Helvetica, sans-serif;
+	float:right;
 	font-size: 12px;
 	color: #f2f1f0;
 }
@@ -71,7 +73,7 @@ ul#nav li {
 	width: 100px;
 	text-align: center;
 	position:relative;
-	float: right;
+	float: left;
 	margin-right: 4px;
 }
 

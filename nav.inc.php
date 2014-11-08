@@ -15,7 +15,7 @@ echo "<ul id=\"nav\">\n";
 	if($cardset != 'showrecipe')
 	{
 		$bookSET = $_REQUEST['card'];
-		echo "<li><strong>Catalog</strong>\n";
+		echo "<li><strong>Catalog</strong><span class=\"darrow\">&#9660;</span>\n";
 		if($bookSET != 'community')
 		{
 			echo "<ul class=\"sub1\"><li><a href=\"index.php?card=community\"><strong>Community Recipes</strong></a></li></ul>\n";
@@ -67,7 +67,7 @@ echo "<ul id=\"nav\">\n";
 		echo "\n";
 	}
 	
-	echo "<li><strong>$userid</strong></a>\n";
+	echo "<li><strong>$userid</strong><span class=\"darrow\">&#9660;</span>\n";
 	echo "<ul class=\"sub1\"><li><a href=\"index.php?card=myaccount&userid=$userid\">\n";
 	echo "<strong>Settings</strong></a></li>\n";
 	echo "<li><a href=\"index.php?card=logout\">(Logout)</a></li></ul>";
