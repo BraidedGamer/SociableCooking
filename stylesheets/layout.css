@@ -65,9 +65,10 @@
 ul#nav, ul.sub1, ul.sub2 {
 	list-style-type:none;
 	font-family: Arial, Helvetica, sans-serif;
-	float:right;
+	float: right;
 	font-size: 12px;
 	color: #f2f1f0;
+	margin-right: 10px;
 }
 
 ul.sub1, ul.sub2 {
@@ -75,11 +76,15 @@ ul.sub1, ul.sub2 {
 	border-radius: 0px 0px 10px 10px;
         -moz-border-radius: 0px 0px 10px 10px;
         -webkit-border-radius: 0px 0px 10px 10px;
-	width: 55px;
+
+	padding: 5px;
+	margin-bottom: 30px;
 }
 
 ul#nav li {
-	width: 100px;
+		outline: 1px solid green;
+	height: 30px;
+	width: 110px;
 	text-align: center;
 	position:relative;
 	float: left;
@@ -87,7 +92,7 @@ ul#nav li {
 }
 
 ul#nav a {
-	height: 30px;	
+	height: 30px;
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
@@ -100,7 +105,7 @@ ul#nav a {
 	background: none;
 }
 
-#nav a:hover {
+ul#nav a:hover {
 	background: #c22;
 	/*background: linear-gradient(left top, #922, #f44);
 	background: -webkit-gradient(linear, left top, left bottom,
@@ -113,9 +118,9 @@ ul#nav a {
 	padding: 4px;
 	padding-top: 0px;
 	
-	border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px ;
+	-webkit-border-radius: 5px 5px 5px 5px;
 
 	
 	text-decoration: none;
@@ -127,16 +132,15 @@ ul#nav a {
 ul#nav .sub1 li {
 }
 ul#nav .sub1 a {
-	margin-top: 5px;
 }
 ul#nav .sub2 a {
 	margin-left: 3px;
 }
 ul#nav li:hover > a {
-	background-color: #CFC;
+	background-color: #c2c;
 }
 ul#nav li:hover a:hover {
-	background-color: #c22; 
+	background-color: #f04040; 
 }
 ul#nav ul.sub1 {
 	display: none;
@@ -157,7 +161,7 @@ ul#nav .sub1 li:hover .sub2 {
 	display: block;
 }
 .darrow {
-	font-size: 11pt;
+	font-size: 8pt;
 	position: absolute;
 	top: 5px;
 	right: 4px;
