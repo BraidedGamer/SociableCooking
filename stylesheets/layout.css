@@ -72,18 +72,19 @@ ul#nav, ul.sub1, ul.sub2 {
 }
 
 ul.sub1, ul.sub2 {
+	width: 110px;
 	background:#c22;
 	border-radius: 0px 0px 10px 10px;
         -moz-border-radius: 0px 0px 10px 10px;
         -webkit-border-radius: 0px 0px 10px 10px;
 
 	padding: 5px;
-	margin-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 ul#nav li {
-		outline: 1px solid green;
-	height: 30px;
+	//	outline: 1px solid green;
+	height: 20px;
 	width: 110px;
 	text-align: center;
 	position:relative;
@@ -92,7 +93,7 @@ ul#nav li {
 }
 
 ul#nav a {
-	height: 30px;
+	height: 20px;
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
@@ -104,7 +105,7 @@ ul#nav a {
 	color: #f2f1f0;
 	background: none;
 }
-
+/*
 ul#nav a:hover {
 	background: #c22;
 	/*background: linear-gradient(left top, #922, #f44);
@@ -113,7 +114,7 @@ ul#nav a:hover {
 	background: -moz-linear-gradient(top, #922, #f44);
 	filter    : progrid:DXImageTransform.Microsoft.Gradient(
 				startColorstr='#902020', endColorstr='#f04040');
-	*/
+	
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
@@ -128,10 +129,11 @@ ul#nav a:hover {
 	font-size: 10px;
 	font-weight: bold;
 	color: #f2f1f0;
-}
+}*/
 ul#nav .sub1 li {
 }
 ul#nav .sub1 a {
+	margin-top:3px;
 }
 ul#nav .sub2 a {
 	margin-left: 3px;
@@ -145,7 +147,7 @@ ul#nav li:hover a:hover {
 ul#nav ul.sub1 {
 	display: none;
 	position: absolute;
-	top: 26px;
+	top: 16px;
 	left: 0px;
 }
 ul#nav ul.sub2 {
