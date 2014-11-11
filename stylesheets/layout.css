@@ -105,7 +105,7 @@ ul#nav a {
 	color: #f2f1f0;
 	background: none;
 }
-/*
+
 ul#nav a:hover {
 	background: #c22;
 	/*background: linear-gradient(left top, #922, #f44);
@@ -114,7 +114,7 @@ ul#nav a:hover {
 	background: -moz-linear-gradient(top, #922, #f44);
 	filter    : progrid:DXImageTransform.Microsoft.Gradient(
 				startColorstr='#902020', endColorstr='#f04040');
-	
+	*/
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
@@ -129,10 +129,12 @@ ul#nav a:hover {
 	font-size: 10px;
 	font-weight: bold;
 	color: #f2f1f0;
-}*/
+}
 ul#nav .sub1 li {
 }
 ul#nav .sub1 a {
+	padding:0px;
+	padding-top:2px;
 	margin-top:3px;
 }
 ul#nav .sub2 a {
