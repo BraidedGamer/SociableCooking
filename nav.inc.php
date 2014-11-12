@@ -40,6 +40,7 @@ echo "<ul id=\"nav\">\n";
 			echo "<li><a href=\"index.php?card=spiceUP&id=$recipeid\"><strong>SPICE</strong></a></li>\n";
 		} 
 	}
+
 	$recipeid = $_REQUEST['id'];
 	// show comment, print and edit nav buttons only when card is set to a value of 'showrecipe'
 	if($cardset == 'showrecipe')

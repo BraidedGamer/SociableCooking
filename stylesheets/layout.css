@@ -78,12 +78,12 @@ ul.drop, ul.toss {
         -moz-border-radius: 0px 0px 10px 10px;
         -webkit-border-radius: 0px 0px 10px 10px;
 
-	padding: 5px;
+	padding:0px;
 	padding-bottom: 10px;
 }
 
 ul#nav li {
-		outline: 1px solid green;
+//		outline: 1px solid green;
 	height: 20px;
 	width: 110px;
 	text-align: center;
@@ -148,7 +148,7 @@ ul#nav .toss a {
 	margin-left: 3px;
 }
 ul#nav li:hover > a {
-	background-color: #c2c;
+	background-color: #f04040;
 }
 ul#nav li:hover a:hover {
 	background-color: #c22; 
