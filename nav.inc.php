@@ -18,10 +18,10 @@ echo "<ul id=\"nav\">\n";
 		echo "<li><strong>Catalog</strong><span class=\"darrow\">&#9660;</span>\n";
 		if($bookSET != 'community')
 		{
-			echo "<ul class=\"sub1\"><li><a href=\"index.php?card=community\"><strong>Community Recipes</strong></a></li></ul>\n";
+			echo "<ul class=\"drop\"><li><a href=\"index.php?card=community\"><strong>Community Recipes</strong></a></li></ul>\n";
 		}else if($bookSET != 'dashboard')
 		{
-			echo "<ul class=\"sub1\"><li><a href=\"index.php?card=myrecipes\"><strong>My Recipes</strong></a></li></ul>\n";
+			echo "<ul class=\"drop\"><li><a href=\"index.php?card=myrecipes\"><strong>My Recipes</strong></a></li></ul>\n";
 		}
 		echo "</li>\n";
 		/* Show Post if your viewing the catalogs, yours or the communities, if
@@ -68,7 +68,7 @@ echo "<ul id=\"nav\">\n";
 	}
 	
 	echo "<li><strong>$userid</strong><span class=\"darrow\">&#9660;</span>\n";
-	echo "<ul class=\"sub1\"><li><a href=\"index.php?card=myaccount&userid=$userid\">\n";
+	echo "<ul class=\"drop\"><li><a href=\"index.php?card=myaccount&userid=$userid\">\n";
 	echo "<strong>Settings</strong></a></li>\n";
 	echo "<li><a href=\"index.php?card=logout\">(Logout)</a></li></ul>";
 
