@@ -83,7 +83,7 @@ ul.sub1, ul.sub2 {
 }
 
 ul#nav li {
-	//	outline: 1px solid green;
+		outline: 1px solid green;
 	height: 20px;
 	width: 110px;
 	text-align: center;
@@ -92,7 +92,7 @@ ul#nav li {
 	margin-right: 4px;
 }
 
-ul#nav a {
+#nav a {
 	height: 20px;
 	display: block;
 	padding: 4px;
