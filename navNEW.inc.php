@@ -22,7 +22,7 @@ echo "<ul id=\"nav\">\n";
 			echo "</ul>\n";
 		} else if($bookSET != 'dashboard') {
 			echo "<ul class=\"drop\">\n";
-				echo "<li><a href=\"index.php?card=\"myrecipes\"><strong>My Recipes</strong></a></li>\n";
+				echo "<li><a href=\"index.php?card=myrecipes\"><strong>My Recipes</strong></a></li>\n";
 			echo "</ul>\n";
 		}
 		echo "</li>\n";
