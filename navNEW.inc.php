@@ -53,7 +53,7 @@ echo "<li><strong>Post</strong><span class=\"darrow\">&#9660;</span>\n";
 						echo "<li><a href=\"index.php?updateSpice&id=$recipeid\"><strong>Edit</strong></a></li>\n";
 					}
 					echo "<li><a href=\"index.php?card=newcomment&id=$recipeid\"><strong>Comment</strong></a></li>\n";
-					echo "<li><a href=\"index.php?card=print.php?id=$recipeid\" target=\"_blank\"><strong>Print</strong></a></li>\n";
+					echo "<li><a href=\"print.php?id=$recipeid\" target=\"_blank\"><strong>Print</strong></a></li>\n";
 				}
 			echo "</ul>\n";
 		echo "</li>\n";
