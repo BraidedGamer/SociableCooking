@@ -70,7 +70,7 @@ if ($row['userid'] == $useridREG)
 if ($baduser != 1)
 {
 	//Everything passed, enter userid in database
-	$query = "INSERT INTO users VALUES ('$useridREG', PASSWORD('$passwordREG'), '$firstName', '$lastName, '$email')";
+	$query = "INSERT INTO users VALUES ('$useridREG', PASSWORD('$passwordREG'), '$firstName', '$lastName', '$email')";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
 	
 	if ($result)
