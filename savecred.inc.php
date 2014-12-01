@@ -3,20 +3,23 @@
 $userid = $_POST['id'];
 $password = $_POST['password'];
 $confirm = $_POST['confirm'];
-$fullname = $_POST['fullname'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $baduser = 0;
 
 if(get_magic_quotes_gpc())
 {
 	$password = stripslashes($password);
-	$password2 = stripslashes($confirm);
-	$fullname = stripslashes($fullname);
+	$confirm = stripslashes($confirm);
+	$firstName = stripslashes($firstName);
+	$lastName = stripslashes($lastName);
 	$email = stripslashes($email);
 }
 $password = mysql_real_escape_string($password);
-$password2 = mysql_real_escape_string($confirm);
-$fullname = mysql_real_escape_string($fullname);
+$confirm = mysql_real_escape_string($confirm);
+$firstName = mysql_real_escape_string($firstName);
+$lastName = mysql_real_escape_string($lastName);
 $email = mysql_real_escape_string($email);
 
 // Check if password was entered
@@ -38,7 +41,7 @@ if ($password != $confirm)
 if ($baduser != 1)
 {
 	//Everything passed, Update credientials in database
-	$query = "UPDATE users SET password=PASSWORD('$password'), fullname='$fullname', email='$email' WHERE userid = '$userid'";
+	$query = "UPDATE users SET password=PASSWORD('$password'), firstName='$firstName', lastName='$lastName', email='$email' WHERE userid = '$userid'";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
 	
 	if ($result)

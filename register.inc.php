@@ -16,17 +16,19 @@ echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 echo "<tr><td align=\"right\"><b>UserName:</b></td>\n";
 echo "<td align=\"left\"><input type=\"text\" name=\"useridREG\" id=\"useridREG\"></td></tr>\n";
 
+echo "<tr><td align=\"right\"><b>First Name:</b></td>\n";
+echo "<td align=\"left\"><input type=\"text\" size=\"40\" name=\"firstName\" id=\"firstName\"></td></tr>\n";
+
+echo "<tr><td align=\"right\"><b>Last Name:</b></td>\n";
+echo "<td align=\"left\"><input type=\"text\" size=\"40\" name=\"lastName\" id=\"lastName\"></td></tr>\n";
+echo "<tr><td align=\"right\"><b>E-mail address:</b></td>\n";
+echo "<td align=\"left\"><input type=\"email\" size=\"50\" name=\"email\" id=\"email\"></td></tr>\n";
+
 echo "<tr><td align=\"right\"><b>Password:</b></td>\n";
 echo "<td align=\"left\"><input type=\"password\" name=\"passwordREG\" id=\"passwordREG\"></td></tr>\n";
 
 echo "<tr><td align=\"right\"><font size=\"1\">Confirm Password:</font></td>\n";
 echo "<td align=\"left\"><input type=\"password\" name=\"confirmPASS\" id=\"confirmPASS\"></td></tr>\n";
-
-echo "<tr><td align=\"right\"><b>Full name:</b></td>\n";
-echo "<td align=\"left\"><input type=\"text\" size=\"40\" name=\"fullName\" id=\"fullName\"></td></tr>\n";
-
-echo "<tr><td align=\"right\"><b>E-mail address:</b></td>\n";
-echo "<td align=\"left\"><input type=\"email\" size=\"50\" name=\"email\" id=\"email\"></td></tr>\n";
 
 echo "<tr><td><input type=\"hidden\" name=\"card\" value=\"adduser\"></td>\n";
 echo "<td align=\"right\"><input type=\"submit\" value=\"Sign-UP\" id=\"signUPbtn\"></td></tr>\n";

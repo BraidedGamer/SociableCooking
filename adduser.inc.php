@@ -10,7 +10,8 @@ if ($con)
 $useridREG = $_POST['useridREG'];
 $passwordREG = $_POST['passwordREG'];
 $confirmPASS = $_POST['confirmPASS'];
-$fullName = $_POST['fullName'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $baduser = 0;
 
@@ -19,13 +20,15 @@ if(get_magic_quotes_gpc())
 	$useridREG = stripslashes($useridREG);
 	$passwordREG = stripslashes($passwordREG);
 	$confirmPASS = stripslashes($confirmPASS);
-	$fullName = stripslashes($fullName);
+	$firstName = stripslashes($firstName);
+	$lastName = stripslashes($lastName);
 	$email = stripslashes($email);
 }
 	$useridREG = mysql_real_escape_string($useridREG);
 	$passwordREG = mysql_real_escape_string($passwordREG);
 	$confirmPASS = mysql_real_escape_string($confirmPASS);
-	$fullName = mysql_real_escape_string($fullName);
+	$firstName = mysql_real_escape_string($firstName);
+	$lastName = mysql_real_escape_string($lastName);
 	$email = mysql_real_escape_string($email);
 
 // Check if userid was entered
@@ -67,7 +70,7 @@ if ($row['userid'] == $useridREG)
 if ($baduser != 1)
 {
 	//Everything passed, enter userid in database
-	$query = "INSERT INTO users VALUES ('$useridREG', PASSWORD('$passwordREG'), '$fullName', '$email')";
+	$query = "INSERT INTO users VALUES ('$useridREG', PASSWORD('$passwordREG'), '$firstName', '$lastName, '$email')";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
 	
 	if ($result)

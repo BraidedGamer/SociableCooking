@@ -3,24 +3,26 @@
 if(isset($_SESSION['recipeuser']))
 {
 	$userid = $_SESSION['recipeuser'];
-	$query = "SELECT fullname FROM users WHERE userid = '$userid'";
+	$query = "SELECT firstName, lastName FROM users WHERE userid = '$userid'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
-	$fullname = $row['fullname'];
+	$firstName = $row['firstName'];
+	$lastName = $row['lastName'];
 
-echo "<h1>" . $fullname . "'s Account</h1>\n";
+echo "<h1>$firstName $lastName's Account</h1>\n";
 
-$query = "SELECT userid, email, fullname FROM users WHERE userid = '$userid'";
+$query = "SELECT userid, email, firstName, lastName FROM users WHERE userid = '$userid'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result, MYSQL_ASSOC);
 
 	$userid = $row['userid'];
 	$email = $row['email'];
-	$fullname = $row['fullname'];
+	$firstName = $row['firstName'];
+	$lastName = $row['lastName'];
 
 echo "<table width=\"80%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
 echo "<tr><td colspan=\"2\"><p>\n";
-echo "Hello, $fullname! Welcome back to SociableCooking.";
+echo "Hello, $firstName $lastName! Welcome back to SociableCooking.";
 echo " This page is designed to allow you to be able to reset ";
 echo "your password and view all your membership credientials.";
 echo " If you have any trouble in reseting your password just contact me via";

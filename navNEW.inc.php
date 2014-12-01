@@ -5,7 +5,7 @@ echo "<table width=\"20%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" alig
 	echo "<td><form action=\"index.php\" method=\"get\">\n";
 	echo "<input name=\"searchFor\" type=\"text\" id=\"searchF\">\n";
 	echo "<input name=\"card\" type=\"hidden\" value=\"search\">\n";
-	echo "</form</td></tr>\n";
+	echo "</form></td></tr>\n";
 echo "</table>\n";
 /* This is the start of the unordered list drop and toss menus area. 
  * We begin with the catalog drop menu.

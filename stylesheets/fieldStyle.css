@@ -142,7 +142,7 @@ form {
 	font: normal 14px Arial, Helvetica, sans-serif;
 	color: #BE2625;
 }
-#fullName, #email, #useridREG, #passwordREG, #confirmPASS {
+#firstName, #lastName, #email, #useridREG, #passwordREG, #confirmPASS {
 	width: 200px;
 	height: 30px;
 	
