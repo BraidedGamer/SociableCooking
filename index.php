@@ -44,7 +44,10 @@ else
 if(!isset($_SESSION['recipeuser']))
 {
 	include_once("register.inc.php");
+} else if(isset($_SESSION['recipeuser'])) {
+	include_once("profile.inc.php");
 }
+
 ?>
 </div>
 <div id="footer">
