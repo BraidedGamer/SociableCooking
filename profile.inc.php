@@ -15,7 +15,13 @@ $row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 $firstName = $row['firstName'];
 $lastName  = $row['lastName'];
 
-echo "<b>Real Name:</b> <i>$lastName, $firstName</i><br>\n";
-
+echo "<table width=\"60%\" cellpadding=\".5px\" cellspacing=\"1px\" \n";
+echo "border=\"0px\" align=\"left\">\n";
+	echo "<tr>\n";
+		echo "<h4>About</h4>\n";
+			echo "<td align=\"left\"><b>Real Name:</b></td>\n";
+			echo "<td align=\"left\"><i>$lastName, $firstName</i></td>\n";
+	echo "</tr>\n";
+echo "</table>\n";
 ?>
 

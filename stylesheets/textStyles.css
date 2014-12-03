@@ -231,7 +231,20 @@ h1 {
 				startColorstr='#F04040', endColorstr='#902020');
 	*/
 }
+h4 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	color: #f2f1f0;
+	text-align:left;
 
+	padding: 6px;
+	padding-top: 8px;
+
+	border: 1px solid #ccc;
+
+	background: #B23212;
+}
 hr {
 	border: 1px solid #ccc;
 	border-radius: 5px 5px 5px 5px;
