@@ -14,14 +14,26 @@ $row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 
 $firstName = $row['firstName'];
 $lastName  = $row['lastName'];
-
-echo "<table width=\"60%\" cellpadding=\".5px\" cellspacing=\"1px\" \n";
-echo "border=\"0px\" align=\"left\">\n";
-	echo "<tr>\n";
-		echo "<h4>About</h4>\n";
-			echo "<td align=\"left\"><b>Real Name:</b></td>\n";
-			echo "<td align=\"left\"><i>$lastName, $firstName</i></td>\n";
-	echo "</tr>\n";
-echo "</table>\n";
+/* This is the code for the about section of the profile. */
+echo "<h4>About</h4>\n";
+	echo "<table width=\"60%\" cellpadding=\".5px\" cellspacing=\"1px\" \n";
+	echo "border=\"0px\" align=\"left\">\n";
+			echo "<tr>\n";
+				echo "<td align=\"left\">Real Name:</td>\n";
+				echo "<td align=\"left\"><i>$lastName, $firstName</i></td>\n";
+			echo "</tr>\n";
+			echo "<tr>\n";
+				echo "<td align=\"left\">Gender:</td>\n";
+				echo "<td align=\"left\"><i></i></td>\n";
+			echo "</tr>\n";
+			echo "<tr>\n";
+				echo "<td align=\"left\">Birthday:</td>\n";
+				echo "<td align=\"left\"><i></i></td>\n";
+			echo "</tr>\n";
+			echo "<tr>\n";
+				echo "<td align=\"left\">Relationship:</td>\n";
+				echo "<td align=\"left\"><i></i></td>\n";
+			echo "</tr>\n";
+	echo "</table>\n";
 ?>
 
