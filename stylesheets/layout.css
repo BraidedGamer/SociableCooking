@@ -235,6 +235,10 @@ ul#nav .drop li:hover .toss {
 	-moz-border-radius: 0px 0px 5px 5px;
 	-webkit-border-radius: 0px 0px 5px 5px;
 }
+#infoDisplay{
+	margin-right: 10px;
+	overflow: hidden;
+}
 
 #dashboard {
 	float: left;
