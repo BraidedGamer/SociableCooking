@@ -14,6 +14,8 @@ $row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 
 $firstName = $row['firstName'];
 $lastName  = $row['lastName'];
+$geneID    = $row['geneID'];
+$email     = $row['email'];
 /* This is the code for the about section of the profile. */
 echo "<h4>About</h4>\n";
 	echo "<div id=\"infoDisplay\">\n";
@@ -37,7 +39,11 @@ echo "<h4>About</h4>\n";
 			echo "</tr>\n";
 			echo "<tr>\n";
 				echo "<td align=\"left\">Gender:</td>\n";
-				echo "<td align=\"left\"><i>male or female</i></td>\n";
+				$genequery = "SELECT gender FROM gender WHERE geneID = $geneID";
+		                $generesult = mysql_query($genequery) or die('Could not retrieve category identification: ' .mysql_error());
+                		$generow = mysql_fetch_array($generesult, MYSQL_ASSOC);
+                		$gender = $generow['gender'];
+				echo "<td align=\"left\"><i>$gender</i></td>\n";
 			echo "</tr>\n";
 			echo "<tr>\n";
 				echo "<td align=\"left\">Birthday:</td>\n";

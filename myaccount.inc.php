@@ -11,14 +11,21 @@ if(isset($_SESSION['recipeuser']))
 
 echo "<h1>$firstName $lastName's Account</h1>\n";
 
-$query = "SELECT userid, email, firstName, lastName FROM users WHERE userid = '$userid'";
+$query = "SELECT userid, geneID, email, firstName, lastName FROM users WHERE userid = '$userid'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result, MYSQL_ASSOC);
 
 	$userid = $row['userid'];
+	$geneID = $row['geneID'];
 	$email = $row['email'];
 	$firstName = $row['firstName'];
 	$lastName = $row['lastName'];
+
+        $genequery = "SELECT gender FROM gender WHERE geneID = $geneID";
+        $generesult = mysql_query($genequery) or die('Could not retrieve category identification: ' .mysql_error());
+        $generow = mysql_fetch_array($generesult, MYSQL_ASSOC);
+        $gender = $generow['gender'];
+
 
 echo "<table width=\"80%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
 echo "<tr><td colspan=\"2\"><p>\n";
@@ -32,6 +39,7 @@ echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 
 echo "<tr><td align=\"right\">Your Userid:</td><td align=\"left\"><b><i>$userid</i></b></td></tr>\n";
 echo "<tr><td align=\"right\">Your Email:</td><td align=\"left\"><b><i>$email</i></b></td></tr>\n";
+echo "<tr><td align=\"right\">Gender:</td><td align=\"left\"><b><i>$gender</i></b></td></tr>\n";
 
 echo "<tr><td colspan=\"2\" align=\"right\"><a href=\"index.php?card=changecred&userid=$userid\">\n";
 echo "Update Credientials</a></td></tr>\n";
