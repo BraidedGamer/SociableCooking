@@ -40,6 +40,9 @@ if($geneID == 1) {
 } else if($geneID == 2) {
 	echo "<td align=\"left\"><input type=\"radio\" name=\"geneID\" value=\"1\">Male \n";
 	echo "<input type=\"radio\" name=\"$geneID\" value=\"2\" checked>Female</td></tr>\n";
+}else {
+        echo "<td align=\"left\"><input type=\"radio\" name=\"geneID\" value=\"1\" checked>Male \n";
+        echo "<input type=\"radio\" name=\"geneID\" value=\"2\">Female</td></tr>\n";
 }
 	// email section
 echo "<tr><td align=\"right\">Email:</td><td align=\"left\">\n";
