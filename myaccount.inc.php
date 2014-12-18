@@ -49,8 +49,11 @@ echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 echo "<tr><td align=\"right\">Your Userid:</td><td align=\"left\"><b><i>$userid</i></b></td></tr>\n";
 echo "<tr><td align=\"right\">Your Email:</td><td align=\"left\"><b><i>$email</i></b></td></tr>\n";
 echo "<tr><td align=\"right\">Gender:</td><td align=\"left\"><b><i>$gender</i></b></td></tr>\n";
-echo "<tr><td align=\"right\">Relationship Status:</td><td align=\"left\"><b><i>$relationStatus</i></b></td></tr>\n";
-
+if($relationStatus == '') {
+	echo "<tr><td align=\"right\">Relationship Status:</td><td align=\"left\"<b><i>You have not set a status for your relationship yet!</i></b></td></tr>\n";
+} else {
+	echo "<tr><td align=\"right\">Relationship Status:</td><td align=\"left\"><b><i>$relationStatus</i></b></td></tr>\n";
+}
 echo "<tr><td colspan=\"2\" align=\"right\"><a href=\"index.php?card=changecred&userid=$userid\">\n";
 echo "Update Credientials</a></td></tr>\n";
 
