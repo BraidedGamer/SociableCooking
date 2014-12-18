@@ -33,16 +33,34 @@ echo " <input type=\"text\" size=\"40\" value=\"$firstName\" name=\"firstName\" 
 echo "<tr><td align=\"right\">Last Name:</td><td align=\"left\">\n";
 echo " <input type=\"text\" size=\"40\" value=\"$lastName\" name=\"lastName\" id=\"lastName\"></td></tr>\n";
 	// gender section
-echo "<tr><td align=\"right\"><b>Gender:</b></td>\n";
+echo "<tr><td align=\"right\">Gender:</td>\n";
 if($geneID == 1) {
 	echo "<td align=\"left\"><input type=\"radio\" name=\"geneID\" value=\"1\" checked>Male \n";
 	echo "<input type=\"radio\" name=\"geneID\" value=\"2\">Female</td></tr>\n";
 } else if($geneID == 2) {
 	echo "<td align=\"left\"><input type=\"radio\" name=\"geneID\" value=\"1\">Male \n";
-	echo "<input type=\"radio\" name=\"$geneID\" value=\"2\" checked>Female</td></tr>\n";
-}else {
+	echo "<input type=\"radio\" name=\"geneID\" value=\"2\" checked>Female</td></tr>\n";
+} else {
         echo "<td align=\"left\"><input type=\"radio\" name=\"geneID\" value=\"1\" checked>Male \n";
         echo "<input type=\"radio\" name=\"geneID\" value=\"2\">Female</td></tr>\n";
+}
+	// Birthdate section
+
+	// relationship status section
+$relationquery = "SELECT relationID FROM relationshipStatus WHERE userid = '$userid'";
+$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status id: ' .mysql_error());
+$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
+$relationID = $relationrow['relationID'];
+echo "<tr><td align=\"right\">Relationship Status:</td>\n";
+if($relationID == 1) {
+	echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\" checked>Single \n";
+	echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship</td></tr>\n";
+} else if($realtionID == 2) {
+        echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\">Single \n";
+        echo "<input type=\"radio\" name=\"relationID\" value=\"2\" checked>In a Relationship</td></tr>\n";
+} else {
+        echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\" checked>Single \n";
+        echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship</td></tr>\n";
 }
 	// email section
 echo "<tr><td align=\"right\">Email:</td><td align=\"left\">\n";

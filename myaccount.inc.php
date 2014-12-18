@@ -21,11 +21,20 @@ $row = mysql_fetch_array($result, MYSQL_ASSOC);
 	$firstName = $row['firstName'];
 	$lastName = $row['lastName'];
 
-        $genequery = "SELECT gender FROM gender WHERE geneID = $geneID";
-        $generesult = mysql_query($genequery) or die('Could not retrieve category identification: ' .mysql_error());
+        $genequery = "SELECT gender FROM gender WHERE geneID = '$geneID'";
+        $generesult = mysql_query($genequery) or die('Could not retrieve gender identification: ' .mysql_error());
         $generow = mysql_fetch_array($generesult, MYSQL_ASSOC);
         $gender = $generow['gender'];
 
+	$relationquery = "SELECT relationID FROM relationshipStatus WHERE userid = '$userid'";
+	$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status id: ' .mysql_error());
+	$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
+	$relationID = $relationrow['relationID'];
+
+	$relationquery = "SELECT status FROM relationship WHERE relationID = '$relationID'";
+	$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status: ' .mysql_error());
+	$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
+	$relationStatus = $relationrow['status'];
 
 echo "<table width=\"80%\" cellpadding=\"0\" cellspacing=\"5\" border=\"0\" align=\"center\">\n";
 echo "<tr><td colspan=\"2\"><p>\n";
@@ -40,6 +49,7 @@ echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 echo "<tr><td align=\"right\">Your Userid:</td><td align=\"left\"><b><i>$userid</i></b></td></tr>\n";
 echo "<tr><td align=\"right\">Your Email:</td><td align=\"left\"><b><i>$email</i></b></td></tr>\n";
 echo "<tr><td align=\"right\">Gender:</td><td align=\"left\"><b><i>$gender</i></b></td></tr>\n";
+echo "<tr><td align=\"right\">Relationship Status:</td><td align=\"left\"><b><i>$relationStatus</i></b></td></tr>\n";
 
 echo "<tr><td colspan=\"2\" align=\"right\"><a href=\"index.php?card=changecred&userid=$userid\">\n";
 echo "Update Credientials</a></td></tr>\n";

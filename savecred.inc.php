@@ -2,6 +2,7 @@
 
 $userid = $_POST['id'];
 $geneID = $_POST['geneID'];
+$relationID = $_POST['relationID'];
 $password = $_POST['password'];
 $confirm = $_POST['confirm'];
 $firstName = $_POST['firstName'];
@@ -12,6 +13,7 @@ $baduser = 0;
 if(get_magic_quotes_gpc())
 {
 	$geneID = stripslashes($geneID);
+	$realtionID = stripslashes($relationID);
 	$password = stripslashes($password);
 	$confirm = stripslashes($confirm);
 	$firstName = stripslashes($firstName);
@@ -19,6 +21,7 @@ if(get_magic_quotes_gpc())
 	$email = stripslashes($email);
 }
 $geneID = mysql_real_escape_string($geneID);
+$relationID = mysql_real_escape_string($relationID);
 $password = mysql_real_escape_string($password);
 $confirm = mysql_real_escape_string($confirm);
 $firstName = mysql_real_escape_string($firstName);
@@ -46,7 +49,7 @@ if ($baduser != 1)
 	//Everything passed, Update credientials in database
 	$query = "UPDATE users SET password=PASSWORD('$password'), geneID='$geneID', firstName='$firstName', lastName='$lastName', email='$email' WHERE userid = '$userid'";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
-	
+
 	if ($result)
 	{
 		$_SESSION['recipeuser'] = $userid;
