@@ -34,7 +34,7 @@ echo "<h4>About</h4>\n";
 					echo "<td align=\"left\"><i>You haven't shared any recipes with us!</i></td>\n";
 				} else {
 					$totrecipes = $row[0];
-					echo "<td align=\"left\"><i>You have $totrecipes recipes!</i></td>\n";
+					echo "<td align=\"left\"><i>You have <b>$totrecipes</b> cards!</i></td>\n";
 				}
 			echo "</tr>\n";
 			echo "<tr>\n";
