@@ -7,14 +7,14 @@ echo "<table width=\"20%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" alig
 	echo "<input name=\"card\" type=\"hidden\" value=\"search\">\n";
 	echo "</form></td></tr>\n";
 echo "</table>\n";
-/* This is the start of the unordered list drop and toss menus area. 
+/* This is the start of the unordered list drop and toss menus area.
  * We begin with the catalog drop menu.
 */
 $userid = $_SESSION['recipeuser'];
-$cardset = $_REQUEST['card'];
+$cardset = isset($_REQUEST['card']) ? $_REQUEST['card'] : '';
 echo "<ul id=\"nav\">\n";
 	if($cardset != 'showrecipe') {
-		$bookSET = $_REQUEST['card'];
+		$bookSET = isset($_REQUEST['card']) ?$_REQUEST['card'] : '';
 		echo "<li><strong>Catalog</strong><span class=\"darrow\">&#9660;</span>\n";
 		if($bookSET != 'community') {
 			echo "<ul class=\"drop\">\n";
@@ -71,4 +71,3 @@ echo "<li><strong>$userid</strong><span class=\"darrow\">&#9660;</span>\n";
 echo "</li>\n";
 echo "</ul>\n";
 ?>
-
