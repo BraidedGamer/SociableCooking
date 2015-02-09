@@ -45,7 +45,7 @@ if(!isset($_SESSION['recipeuser']))
 {
 	include_once("register.inc.php");
 } else if(isset($_SESSION['recipeuser'])) {
-	if($card != 'myaccount' && $card != 'changecred' && $card != 'savecred') {
+	if(@$card != 'myaccount' && @$card != 'changecred' && @$card != 'savecred') {
 		include_once("profile.inc.php");
 	}
 }
