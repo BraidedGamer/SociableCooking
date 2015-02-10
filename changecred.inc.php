@@ -54,13 +54,20 @@ $relationID = $relationrow['relationID'];
 echo "<tr><td align=\"right\">Relationship Status:</td>\n";
 if($relationID == 1) {
 	echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\" checked>Single \n";
-	echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship</td></tr>\n";
+	echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship \n";
+	echo "<input type=\"radio\" name=\"relationID\" value=\"3\">Married</td></tr>\n";
 } else if($realtionID == 2) {
         echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\">Single \n";
-        echo "<input type=\"radio\" name=\"relationID\" value=\"2\" checked>In a Relationship</td></tr>\n";
+        echo "<input type=\"radio\" name=\"relationID\" value=\"2\" checked>In a Relationship \n";
+				echo "<input type=\"radio\" name=\"relationID\" value=\"3\">Married</td></tr>\n";
+} else if($relationID == 3) {
+				echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\">Single \n";
+				echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship \n";
+				echo "<input type=\"radio\" name=\"relationID\" value=\"3\" checked>Married</td></tr>\n";
 } else {
         echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\" checked>Single \n";
-        echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship</td></tr>\n";
+        echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship \n";
+				echo "<input type=\"radio\" name=\"relationID\" value=\"3\">Married</td></tr>\n";
 }
 	// email section
 echo "<tr><td align=\"right\">Email:</td><td align=\"left\">\n";
