@@ -3,33 +3,22 @@
 if(isset($_SESSION['recipeuser']))
 {
 	$userid = $_SESSION['recipeuser'];
-	$query = "SELECT firstName, lastName FROM users WHERE userid = '$userid'";
+	$query = "SELECT * FROM users WHERE userid = '$userid'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
+
 	$firstName = $row['firstName'];
 	$lastName = $row['lastName'];
-
-echo "<h1>$firstName $lastName's Account</h1>\n";
-
-$query = "SELECT userid, geneID, email, firstName, lastName FROM users WHERE userid = '$userid'";
-$result = mysql_query($query);
-$row = mysql_fetch_array($result, MYSQL_ASSOC);
-
-	$userid = $row['userid'];
+	$relationID = $row['relationID'];
 	$geneID = $row['geneID'];
 	$email = $row['email'];
-	$firstName = $row['firstName'];
-	$lastName = $row['lastName'];
+
+echo "<h1>$firstName $lastName's Account</h1>\n";
 
         $genequery = "SELECT gender FROM gender WHERE geneID = '$geneID'";
         $generesult = mysql_query($genequery) or die('Could not retrieve gender identification: ' .mysql_error());
         $generow = mysql_fetch_array($generesult, MYSQL_ASSOC);
         $gender = $generow['gender'];
-
-	$relationquery = "SELECT relationID FROM relationshipStatus WHERE userid = '$userid'";
-	$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status id: ' .mysql_error());
-	$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
-	$relationID = $relationrow['relationID'];
 
 	$relationquery = "SELECT status FROM relationship WHERE relationID = '$relationID'";
 	$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status: ' .mysql_error());

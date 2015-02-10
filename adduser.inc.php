@@ -1,5 +1,5 @@
 <?php
-		
+
 if ($con)
 {
 	echo "<h1>Sorry</h1>";
@@ -73,9 +73,9 @@ if ($row['userid'] == $useridREG)
 if ($baduser != 1)
 {
 	//Everything passed, enter userid in database
-	$query = "INSERT INTO users VALUES ('$useridREG','$gender', PASSWORD('$passwordREG'), '$firstName', '$lastName', '$email')";
+	$query = "INSERT INTO users VALUES ('$useridREG','$gender', 1, PASSWORD('$passwordREG'), '$firstName', '$lastName', '$email')";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
-	
+
 	if ($result)
 	{
 		$_SESSION['recipeuser'] = $useridREG;

@@ -47,7 +47,7 @@ if ($password != $confirm)
 if ($baduser != 1)
 {
 	//Everything passed, Update credientials in database
-	$query = "UPDATE users SET password=PASSWORD('$password'), geneID='$geneID', firstName='$firstName', lastName='$lastName', email='$email' WHERE userid = '$userid'";
+	$query = "UPDATE users SET password=PASSWORD('$password'), geneID='$geneID', relationID='$relationID', firstName='$firstName', lastName='$lastName', email='$email' WHERE userid = '$userid'";
 	$result = mysql_query($query) or die('Sorry, we are unable to process your request.' . mysql_error());
 
 	if ($result)

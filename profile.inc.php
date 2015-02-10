@@ -12,10 +12,11 @@ $result = mysql_query($query) or die('Could not retrieve user info: ' .mysql_err
 
 $row = mysql_fetch_array($result, MYSQL_ASSOC) or die('No records retrieved');
 
-$firstName = $row['firstName'];
-$lastName  = $row['lastName'];
-$geneID    = $row['geneID'];
-$email     = $row['email'];
+$firstName  = $row['firstName'];
+$lastName   = $row['lastName'];
+$geneID     = $row['geneID'];
+$relationID = $row['relationID'];
+$email      = $row['email'];
 /* This is the code for the about section of the profile. */
 echo "<h4>About</h4>\n";
 	echo "<div id=\"infoDisplay\">\n";
@@ -51,7 +52,11 @@ echo "<h4>About</h4>\n";
 			echo "</tr>\n";
 			echo "<tr>\n";
 				echo "<td align=\"left\">Relationship:</td>\n";
-				echo "<td align=\"left\"><i>relationship status</i></td>\n";
+				$relationquery = "SELECT status FROM relationship WHERE relationID = '$relationID'";
+				$relationresult = mysql_query($relationquery) or die('Could not retrieve category identification: ' . mysql_error());
+				$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
+				$relationship = $relationrow['status'];
+				echo "<td align=\"left\"><i>$relationship</i></td>\n";
 			echo "</tr>\n";
 		echo "</table>\n";
 	echo "</div>\n";
@@ -62,4 +67,3 @@ echo "<h4>Biography</h4>\n";
 	echo "</div>\n";
 /* This is the end of the bio section */
 ?>
-

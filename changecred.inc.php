@@ -3,23 +3,16 @@
 if(isset($_SESSION['recipeuser']))
 {
 	$userid = $_SESSION['recipeuser'];
-	$query = "SELECT firstName, lastName FROM users WHERE userid = '$userid'";
+	$query = "SELECT * FROM users WHERE userid = '$userid'";
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
 	$firstName = $row['firstName'];
 	$lastName = $row['lastName'];
+	$email = $row['email'];
+	$geneID = $row['geneID'];
+	$relationID = $row['relationID'];
 
 echo "<h1>$firstName $lastName's Account</h1>\n";
-
-$query = "SELECT userid, geneID,  email, firstName, lastName FROM users WHERE userid = '$userid'";
-$result = mysql_query($query);
-$row = mysql_fetch_array($result, MYSQL_ASSOC);
-
-	$userid = $row['userid'];
-	$geneID = $row['geneID'];
-	$email = $row['email'];
-	$firstName = $row['firstName'];
-	$lastName = $row['lastName'];
 	// userid section
 echo "<form action=\"index.php\" method=\"post\">\n";
 echo "<table width=\"80%\" cellpadding=\"0\" cellspacing=\"3\" border=\"0\" align=\"center\">\n";
@@ -47,16 +40,12 @@ if($geneID == 1) {
 	// Birthdate section
 
 	// relationship status section
-$relationquery = "SELECT relationID FROM relationshipStatus WHERE userid = '$userid'";
-$relationresult = mysql_query($relationquery) or die('Could not retrieve relationship status id: ' .mysql_error());
-$relationrow = mysql_fetch_array($relationresult, MYSQL_ASSOC);
-$relationID = $relationrow['relationID'];
 echo "<tr><td align=\"right\">Relationship Status:</td>\n";
 if($relationID == 1) {
 	echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\" checked>Single \n";
 	echo "<input type=\"radio\" name=\"relationID\" value=\"2\">In a Relationship \n";
 	echo "<input type=\"radio\" name=\"relationID\" value=\"3\">Married</td></tr>\n";
-} else if($realtionID == 2) {
+} else if($relationID == 2) {
         echo "<td align=\"left\"><input type=\"radio\" name=\"relationID\" value=\"1\">Single \n";
         echo "<input type=\"radio\" name=\"relationID\" value=\"2\" checked>In a Relationship \n";
 				echo "<input type=\"radio\" name=\"relationID\" value=\"3\">Married</td></tr>\n";
