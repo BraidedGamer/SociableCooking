@@ -31,7 +31,7 @@ posting, or editing recipes.
 
 * [x] Categorical System
 
-* [x] Rework Navigation System
+* [ ] Rework Navigation System
 
 * [ ] Profile System
 
