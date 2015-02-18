@@ -24,7 +24,7 @@
 
 	if($spicer == '') {
 		echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"center\">\n";
-	
+
 		echo "<tr><td rowspan=\"7\" valign=\"top\" align=\"center\" width=\"180px\">\n";
 		echo "<img src=\"showimage.php?id=$recipeid\" width=\"180px\" height=\"280px\"></td>\n";
 		echo "<td valign=\"bottom\"><recipeTIT>$title</recipeTIT><catname>$category</catname></td></tr>\n";
@@ -77,12 +77,12 @@
    		echo " comments posted.  \n";
    		echo "<tr><td><hr></td></tr>\n";
    		echo "</table>\n";
-   
+
     	if (!isset($_GET['page']))
     		$thispage = 1;
 		else
 			$thispage = $_GET['page'];
-	
+
 			$recordsperpage = 2;
 			$offset = ($thispage - 1) * $recordsperpage;
 			$totpages = ceil($totrecords / $recordsperpage);
@@ -90,13 +90,15 @@
 		   	$query = "SELECT date,poster,comment FROM comments WHERE recipeid = $recipeid ORDER BY commentid
    						DESC LIMIT $offset, $recordsperpage";
    			$result = mysql_query($query) or die('Could not retrieve comments');
-   			
+
 		while($row = mysql_fetch_array($result, MYSQL_ASSOC))
    		{
        			$date = $row['date'];
        			$poster = $row['poster'];
    				$comment = $row['comment'];
     			$comment = nl2br($comment);
+
+					$date = date("l M jS, Y", strtotime($date));
 
    			echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">\n";
        		echo "<tr><td><p>$comment</p></td></tr>\n";
@@ -128,7 +130,7 @@
 				}
 			}
 		}
-	
+
 		if ($thispage < $totpages)
 		{
 			$page = $thispage + 1;
@@ -137,7 +139,7 @@
 		{
 			$nextpage = "Next";
 		}
-		
+
 		echo "<table width=\"100%\" border=\"0\" cellspacing=\"3\" cellpadding=\"5\" align=\"left\">\n";
 		echo "<tr><td width=\"50\" align=\"right\">GoTo:</td>" . "<td width=\"50\" align=\"left=\"><page>$prevpage</page></td>"
 		. "<td width=\"250\" align=\"center\"> <page>$bar</page> </td>" . "<td width=\"50\" align=\"right\"><page>$nextpage</page></td></tr></table>\n";
