@@ -48,7 +48,7 @@ echo "<h4>About</h4>\n";
 			echo "</tr>\n";
 			echo "<tr>\n";
 				echo "<td align=\"left\">Birthday:</td>\n";
-				echo "<td align=\"left\"><i>birthdate</i></td>\n";
+				echo "<td align=\"left\"><font color=\"#B23212\"><b><i>Coming Soon!</i></b></font></td>\n";
 			echo "</tr>\n";
 			echo "<tr>\n";
 				echo "<td align=\"left\">Relationship:</td>\n";
