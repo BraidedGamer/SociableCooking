@@ -12,7 +12,7 @@ the hard copy book recipes straight.
 
 * [ ] I'll eventually be going through and commenting out all the code for easier understanding of the code
 
-* [ ] Enhaced Encryption for password with a salted hash
+* [ ] Enhanced Encryption for password with a salted hash
 
 * [ ] Forgotten Password Reset
 
