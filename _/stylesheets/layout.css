@@ -1,28 +1,34 @@
-/* 	Designed and Coded by Theodore Philip Rees to advance my current
-	skills in web design and showcase my knowledge of web programming!
+/* 	Designed and Coded by Theodore Philip Rees to advance my current 
+	skills in web design and showcase my knowledge of web programming! 
 */
 
 #wrapper {
-	width: 75%;
-
+	width: 1000px;
+	
 	margin: 0px auto;
-
+	
 	padding: 30px 0px;
 	padding-top: 0px;
 	padding-bottom: 10px;
 }
 
 #headerBar {
-	width: 100%;
+	width: 1000px;
 	height: 40px;
-
+	
 	margin: auto;
-
+	
 	padding-left: 5px;
 	padding-right: 5px;
-
+	
 	background: #f04040;
-
+	/*background: -webkit-gradient(linear, left top, left bottom,
+				from(#F44), to (#922));
+	background: -moz-linear-gradient(top, #F44, #922);
+	background: linear-gradient(left top, #F44, #922);
+	filter 	  : progid: DXImageTransform.Microsoft.Gradient(
+				startColorstr='#F04040', endColorstr='#902020');
+	*/
 	border-radius: 0px 0px 10px 10px;
 	-moz-border-radius: 0px 0px 10px 10px;
 	-webkit-border-radius: 0px 0px 10px 10px;
@@ -100,7 +106,7 @@ ul#nav a {
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
-	position: relative;
+	position: relative;	
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
@@ -111,16 +117,22 @@ ul#nav a {
 
 ul#nav a:hover {
 	background: #c22;
-	
+	/*background: linear-gradient(left top, #922, #f44);
+	background: -webkit-gradient(linear, left top, left bottom,
+				from(#922) to(#f44));
+	background: -moz-linear-gradient(top, #922, #f44);
+	filter    : progrid:DXImageTransform.Microsoft.Gradient(
+				startColorstr='#902020', endColorstr='#f04040');
+	*/
 	display: block;
 	padding: 4px;
 	padding-top: 0px;
-
+	
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px ;
 	-webkit-border-radius: 5px 5px 5px 5px;
 
-
+	
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
@@ -152,7 +164,7 @@ ul#nav li:hover > a {
 	background-color: #f04040;
 }
 ul#nav li:hover a:hover {
-	background-color: #c22;
+	background-color: #c22; 
 }
 ul#nav ul.drop li:hover a:hover {
 	background-color:#f04040;
@@ -193,18 +205,18 @@ ul#nav .drop li:hover .toss {
 	position: relative;
 	top: 0px;
 	left: 435px;
-
+	
 	width: 283px;
 	height: 22px;
-
+	
 	padding-top: 5px;
-
+	
 	margin: 0px;
 }
 
 #sideBar {
 	float: right;
-	width: 31.5%;
+	width: 290.00px;
 	height: 720px;
 
 	font-family: Arial, Helvetica, sans-serif;
@@ -214,7 +226,7 @@ ul#nav .drop li:hover .toss {
 	padding-right: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-
+	
 	margin-left: 5px;
 
 	background-color: #f2f1f0;
@@ -230,9 +242,9 @@ ul#nav .drop li:hover .toss {
 
 #dashboard {
 	float: left;
-	width: 64%;
+	width: 665px;
 	height: 720px;
-
+	
         font-family: Arial, Helvetica, sans-serif;
         font-size: 12px;
 
@@ -240,17 +252,17 @@ ul#nav .drop li:hover .toss {
 	padding-left: 3px;
 	padding-right: 3px;
 	padding-bottom: 5px;
-
+	
 	margin-left: 5px;
 	margin-right: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-
+	
 	background: #f2f1f0;
 
 	border-radius: 0px 0px 5px 5px;
 	-moz-border-radius: 0px 0px 5px 5px;
 	-webkit-border-radius: 0px 0px 5px 5px;
-
+	
 	overflow: auto;
 }

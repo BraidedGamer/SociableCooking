@@ -1,0 +1,10 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^recipes\.aspienation\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.recipes\.aspienation\.net$
+RewriteRule ^/?$ "http\:\/\/recipes\.aspienation\.net\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^cookbook\.aspienation\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.cookbook\.aspienation\.net$
+RewriteRule ^/?$ "http\:\/\/cookbook\.aspienation\.net" [R=301,L]
+

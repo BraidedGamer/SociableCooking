@@ -2,7 +2,7 @@
 
 echo "<form action=\"index.php\" method=\"post\" target=\"_self\">\n";
 
-echo "<table width=\"100%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"right\">\n";
+echo "<table width=\"300\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"right\">\n";
 
 echo "<tr><td colspan=\"2\"><h1><b>Sign-UP</b></h1></td></tr>\n";
 
@@ -40,7 +40,7 @@ echo "<td align=\"right\"><input type=\"submit\" value=\"Sign-UP\" id=\"signUPbt
 echo "<tr><td colspan=\"2\"><hr></td></tr>\n";
 
 echo "<tr><td colspan=\"2\"><p><font size=\"1\"><b>TERMS OF USE:</b> By logging in to this Web site you agree
-to abide by all the rules and regulations set forth in the TERMS OF USE policy. No foul language will be permitted
+to abide by all the rules and regulations set forth in the TERMS OF USE policy. No foul language will be permitted 
 in the postings at any time. Please respect the opinions of others-no flame wars allowed. Any user caught violating
 these very simple rules will be terminated and not allowed back in. <b>Privacy Policy:</b> We do not share user
 information with third parties and try to take every possible precaution to ensure that your information remains
@@ -48,3 +48,4 @@ safe and secure.</font></p></td></tr>\n";
 echo "</table></form>\n";
 
 ?>
+
