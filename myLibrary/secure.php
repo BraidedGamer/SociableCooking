@@ -3,21 +3,10 @@
   * we are excluding it from the repo due to security concerns.
  **/
 function DataConnect() {
-  $user = 'sociable_recipes';
-  $password = 'The0d0re';
-  $db = 'sociable_recipe';
-  $host = 'localhost';
-  $port = 3306;
+	$username = 'sociable_recipes';
+	$password = 'The0d0re';
 
-  $link = mysqli_init();
-  $success = mysqli_real_connect(
-     $link,
-     $host,
-     $user,
-     $password,
-     $db,
-     $port
-  );
+	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=sociable_recipe', $username, $password);
 }
 
 ?>
