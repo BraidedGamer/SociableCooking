@@ -10,7 +10,7 @@ if (!isset($_SESSION['recipeuser']))
 	echo "your kitchen creativity.\n";
 	echo "</font></h3>\n";
 
-	include_once("allrecipes.inc.php");
+	include_once("allrecipe.inc.php");
 } else
 {
 	$user = $_SESSION['recipeuser'];
