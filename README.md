@@ -1,6 +1,6 @@
 #SociableCooking
 
-[SociableCooking](http://www.sociablecooking.com/) is a web application that allows all registered users to post and comment on recipes.
+[SociableCooking](http://www.theodorepr.com/recipe_center) is a web application that allows all registered users to post and comment on recipes.
 
 SociableCooking is a way to open your kitchen to creative and innovative new cooking methods and recipes. After
 registering with the site feel to post recipes with weird and akward directions. I'll try and go through and weed out
@@ -38,5 +38,11 @@ posting, or editing recipes.
 * [ ] Life Tip System
 
 * [ ] Add a little perl flare to the site, greeting script
+
+* [ ] Switch MySQL connections to PDO
+
+* [ ] Restructure site files into folders
+
+* [ ] Create a PDO connection to MySQL database
 
 *After all that I'll have earned a good break. Question is will I want to take a break?*
