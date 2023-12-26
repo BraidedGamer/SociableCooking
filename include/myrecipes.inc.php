@@ -48,7 +48,7 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 
 	$catquery = "SELECT * FROM categories WHERE catid = $catid";
         $catresult = mysql_query($catquery) or die('Could not retrieve category identification: ' .mysql_error());
-        while($catrow = mysql_fetch_array($catresult, MYSQL_ASSOC)) {
+        while($catrow = mysql_fetch_array($catresult, mysql_ASSOC)) {
         	$category = $catrow['name'];
 
 		if($spicer == '') {

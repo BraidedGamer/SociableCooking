@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="Shortcut Icon" href="images/sociable-logo.ico" />
+<link rel="Shortcut Icon" href="images/RecipeLogo.png" />
 <link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/textStyles.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/fieldStyle.css" />

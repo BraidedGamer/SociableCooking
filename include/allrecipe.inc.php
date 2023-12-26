@@ -1,10 +1,10 @@
 <?php
+// Import Database Connection And Class
+require('../myLibrary/secure.php');
 
-require_once('../myLibrary/secure.php');
+$all_recipes = $db->Select('SELECT recipeid,catid,title,poster,spicer,shortdesc FROM recipes ORDER BY 'recipeid' ASC);
 
-$stmt = $pdo->query('SELECT recipeid,catid,title,poster,spicer,shortdesc FROM recipes');
-
-while ($row = $stmt->fetch()){
+while ($row = $all_recipes->fetchAll()){
 	$recipeid = $row['recipeid'];
 	$catid    = $row['catid'];
 	$title    = $row['title'];
