@@ -26,8 +26,9 @@ require_once("myLibrary/recipe_display.func.php");
 </div>
 <div id="dashboard">
 <?php
+
 if(!isset($_REQUEST['card']))
-	include("include/myrecipes.inc.php");
+	include_once("myrecipes.inc.php");
 else
 {
 	$card = $_REQUEST['card'];
