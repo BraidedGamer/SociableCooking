@@ -5,8 +5,7 @@
 SociableCooking is a way to open your kitchen to creative and innovative new cooking methods and recipes. After
 registering with the site feel to post recipes with weird and akward directions. I'll try and go through and weed out
 all bull-shit recipes. Mainly because, after I hit a certain number of recipes in the database I plan to start selling
-recipe books with recipes from the site and I'll probably create a new database table for each year so that I can keep
-the hard copy book recipes straight.
+recipe books with recipes from the site and I'll probably add a date stamp to the recipes table in order to properly know what year recipes are submitted. Though I will never sell any information submitted into the website. Please bear in mind that I am one lone developer and still learning.
 
 * [ ] I intend to work on evolving this site beyond what it is now by implementing ajax for a more dynamic experience
 
@@ -39,10 +38,10 @@ posting, or editing recipes.
 
 * [ ] Add a little perl flare to the site, greeting script
 
-* [ ] Switch MySQL connections to PDO
+* [ ] Add a datestamp key value to the recipes table
 
-* [ ] Restructure site files into folders
+* [ ] Restructure site files into folders similar to my portfolio site
 
-* [ ] Create a PDO connection to MySQL database
+* [ ] Create a PDO Database connection with a framework
 
 *After all that I'll have earned a good break. Question is will I want to take a break?*
