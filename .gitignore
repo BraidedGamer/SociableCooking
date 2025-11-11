@@ -1,2 +1,3 @@
 .DS_Store
 myLibrary/secure.php
+myLibrary/secure.con.php

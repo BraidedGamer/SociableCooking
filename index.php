@@ -1,65 +1,49 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sociable Cooking</title>
-<link rel="Shortcut Icon" href="images/sociable-logo.ico" />
-<link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
-<link rel="stylesheet" type="text/css" href="stylesheets/textStyles.css" />
-<link rel="stylesheet" type="text/css" href="stylesheets/fieldStyle.css" />
-<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Sociable Cooking</title>
+		<link rel="Shortcut Icon" href="images/sociable-logo.ico" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/textStyles.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/fieldStyle.css" />
+		<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 
-<body>
+		<!-- Bootstrap CSS CDN link -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-<?php
-require_once("myLibrary/secure.php");
-require_once("myLibrary/functions.php");
-require_once("myLibrary/recipe_display.func.php");
-?>
+		<!-- viewport is a meta tag that will help with proper page responsive behavior with bootstrap -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<?php
+			include_once("myLibrary/secure.con.php");
+			include("myLibrary/functions.php");
+			include("myLibrary/recipe_display.func.php");
+		?>
 
-<div id="wrapper">
-<div id="headerBar"><?php include_once("include/header.inc.php"); ?>
-</div>
-<div id="dashboard">
-<?php
+		<div id="wrapper">
+			<div class="headerBar">
+				<?php 
+					include_once("include/header.inc.php");
+				?>
+			</div>
+			<div class="dashboard">
+				<?php
+					if(isset($_REQUEST['card'])) {
+						allRecipesDisplay();
+					}
+				?>
+			</div>
+			<div class="sideBar">
 
-if(!isset($_REQUEST['card']))
-	include_once("myrecipes.inc.php");
-else
-{
-	$card = $_REQUEST['card'];
-	$nextpage = "include" . $card . ".inc.php";
-	include_once($nextpage);
-}
-
-?>
-</div>
-<div id="sideBar">
-<?php
-// Display of social network badges
-
-if(!isset($_SESSION['recipeuser']))
-{
-	include_once("include/register.inc.php");
-} else if(isset($_SESSION['recipeuser'])) {
-	if(@$card != 'myaccount' && @$card != 'changecred' && @$card != 'savecred') {
-		include_once("include/profile.inc.php");
-	}
-}
-
-?>
-</div>
-<div id="footer">
-<?php
-include_once("include/footer.inc.php");
-?>
-</div>
-</div>
-<script src="scripts/jquery-1.11.0.min.js"></script>
-<script src="scripts/application.js"></script>
-</body>
+			</div>
+			<div class="footer">
+				<?php
+					include_once("include/footer.inc.php");
+				?>
+			</div>
+		</div>
+	</body>
 </html>
+

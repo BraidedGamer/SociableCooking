@@ -1,10 +1,5 @@
 <?PHP
-include('secure.php');
-	/**
-  * This function file will contain the display scripts for the catalog  pages.
-**/
-
-
+include('../secure.con.php');
 
 function allRecipesDisplay() {
 	/** This function is used to call forth all recipes from the database and display them

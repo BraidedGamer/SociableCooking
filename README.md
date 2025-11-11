@@ -44,4 +44,6 @@ posting, or editing recipes.
 
 * [ ] Create a PDO Database connection with a framework
 
+* [ ] Add Prep-time to recipe table
+
 *After all that I'll have earned a good break. Question is will I want to take a break?*
