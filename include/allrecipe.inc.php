@@ -1,6 +1,6 @@
 <?php
 // Import Database Connection And Class
-require('../myLibrary/secure.php');
+require('../myLibrary/secure.con.php');
 
 $all_recipes = $db->Select('SELECT recipeid,catid,title,poster,spicer,shortdesc FROM recipes ORDER BY 'recipeid' ASC);
 

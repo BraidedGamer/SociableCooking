@@ -32,10 +32,17 @@
 				<?php
 					if(isset($_REQUEST['card'])) {
 						allRecipesDisplay();
-					}
+					} else {
+					$card = $_REQUEST['card'];
+					$nextpage = "include/" . $card . ".inc.php";
+					include_once($nextpage);
+				}
 				?>
 			</div>
 			<div class="sideBar">
+				<?php
+					include_once("include/register.inc.php")
+				?>
 
 			</div>
 			<div class="footer">
