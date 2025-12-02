@@ -1,7 +1,7 @@
 <?php
 echo "<table width=\"50%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">\n";
 
-echo "<tr><td><appname><a href=\"index.php\">SociableCooking</a></appname></td></tr>\n";
+echo "<tr><td><appname><a href=\"index.php\">Braided Kitchen</a></appname></td></tr>\n";
 echo "</table>\n";
 
 echo "<div id=\"login\">\n";

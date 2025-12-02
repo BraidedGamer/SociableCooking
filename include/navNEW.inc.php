@@ -1,7 +1,7 @@
 <?php
 /* This is the navigation include file for SociableCooking.com */
 echo "<table width=\"20%\" border=\"0\" cellspacing=\"5\" cellpadding=\"0\" align=\"left\">\n";
-	echo "<tr><td><appname><a href=\"index.php\">SociableCooking</a></appname></td>\n";
+	echo "<tr><td><appname><a href=\"index.php\">Braided Kitchen</a></appname></td>\n";
 	echo "<td><form action=\"index.php\" method=\"get\">\n";
 	echo "<input name=\"searchFor\" type=\"text\" id=\"searchF\">\n";
 	echo "<input name=\"card\" type=\"hidden\" value=\"search\">\n";

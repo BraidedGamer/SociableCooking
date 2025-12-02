@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Sociable Cooking</title>
+		<title>Braided Kitchen - Opening the Kitchen Environment</title>
 		<link rel="Shortcut Icon" href="images/sociable-logo.ico" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/textStyles.css" />
@@ -22,7 +22,7 @@
 			include("myLibrary/recipe_display.func.php");
 		?>
 
-		<div id="wrapper">
+		<!-- <div id="wrapper"> -->
 			<div class="headerBar">
 				<?php 
 					include_once("include/header.inc.php");
@@ -31,11 +31,10 @@
 			<div class="dashboard">
 				<?php
 					if(isset($_REQUEST['card'])) {
-						allRecipesDisplay();
+						$card = $_REQUEST['card'];
+						$nextpage = "include/" . $card . ".inc.php";
+						include_once($nextpage);
 					} else {
-					$card = $_REQUEST['card'];
-					$nextpage = "include/" . $card . ".inc.php";
-					include_once($nextpage);
 				}
 				?>
 			</div>
@@ -50,7 +49,7 @@
 					include_once("include/footer.inc.php");
 				?>
 			</div>
-		</div>
+		<!--</div>-->
 	</body>
 </html>
 
